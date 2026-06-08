@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tra Cứu Điểm Thi Lớp 10 Nghệ An 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 16px;
+  }
+
+  .container { width: 100%; max-width: 700px; }
+
+  .header { text-align: center; margin-bottom: 30px; animation: fadeDown 0.6s ease; }
+  .header .emoji-big { font-size: 60px; display: block; margin-bottom: 10px; }
+  .header h1 { color: white; font-size: 26px; font-weight: 800; text-shadow: 0 2px 10px rgba(0,0,0,0.3); line-height: 1.3; }
+  .header p { color: rgba(255,255,255,0.85); margin-top: 8px; font-size: 14px; }
+
+  .card {
+    background: white;
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    animation: fadeUp 0.6s ease;
+  }
+
+  .input-group { display: flex; gap: 12px; flex-wrap: wrap; }
+  .input-group input {
+    flex: 1; min-width: 180px;
+    padding: 16px 20px;
+    border: 2.5px solid #e0e0e0;
+    border-radius: 14px;
+    font-size: 18px; font-family: inherit; font-weight: 600; letter-spacing: 2px;
+    outline: none; transition: all 0.3s; color: #333;
+  }
+  .input-group input:focus { border-color: #667eea; box-shadow: 0 0 0 4px rgba(102,126,234,0.15); }
+  .input-group input::placeholder { letter-spacing: 0; font-weight: 400; color: #aaa; }
+
+  .btn-search {
+    padding: 16px 28px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white; border: none; border-radius: 14px;
+    font-size: 16px; font-weight: 700; font-family: inherit;
+    cursor: pointer; transition: all 0.3s; white-space: nowrap;
+  }
+  .btn-search:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(102,126,234,0.5); }
+  .btn-search:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  /* ===== THỦ KHOA CARD ===== */
+  #thuKhoaCard {
+    background: white;
+    border-radius: 24px;
+    padding: 24px 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    animation: fadeUp 0.6s ease;
+    transition: all 0.4s ease;
+    overflow: hidden;
+  }
+  #thuKhoaCard.hidden {
+    opacity: 0;
+    max-height: 0;
+    padding: 0 28px;
+    margin-bottom: 0;
+    pointer-events: none;
+  }
+
+  .thu-khoa-header {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 16px;
+  }
+  .thu-khoa-header .tk-title {
+    font-size: 16px; font-weight: 800; color: #333;
+  }
+  .thu-khoa-header .tk-sub {
+    font-size: 12px; color: #aaa; margin-left: auto;
+  }
+
+  .tk-list { display: flex; flex-direction: column; gap: 10px; }
+
+  .tk-item {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 16px; border-radius: 16px;
+    transition: transform 0.2s;
+  }
+  .tk-item:hover { transform: translateX(4px); }
+  .tk-item.rank1 { background: linear-gradient(135deg, #fff8e1, #ffe082); border: 2px solid #ffd54f; }
+  .tk-item.rank2 { background: linear-gradient(135deg, #f5f5f5, #e0e0e0); border: 2px solid #bdbdbd; }
+  .tk-item.rank3 { background: linear-gradient(135deg, #fbe9e7, #ffccbc); border: 2px solid #ffab91; }
+
+  .tk-medal { font-size: 28px; flex-shrink: 0; }
+  .tk-info { flex: 1; }
+  .tk-info .tk-sbd { font-size: 13px; color: #888; font-weight: 600; }
+  .tk-info .tk-name { font-size: 15px; font-weight: 800; color: #222; margin-top: 1px; }
+  .tk-score-box { text-align: right; }
+  .tk-score-box .tk-score { font-size: 28px; font-weight: 800; line-height: 1; }
+  .tk-item.rank1 .tk-score { color: #f59e0b; }
+  .tk-item.rank2 .tk-score { color: #6b7280; }
+  .tk-item.rank3 .tk-score { color: #ea580c; }
+  .tk-score-box .tk-score-label { font-size: 11px; color: #aaa; margin-top: 2px; }
+
+  .tk-details { display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; }
+  .tk-tag {
+    font-size: 11px; font-weight: 600; padding: 3px 8px;
+    border-radius: 20px; background: rgba(255,255,255,0.7); color: #555;
+  }
+
+  /* ===== KẾT QUẢ ===== */
+  #result { display: none; }
+
+  .student-header {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 20px; padding-bottom: 20px;
+    border-bottom: 2px dashed #f0f0f0;
+  }
+  .avatar {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #f093fb);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px; flex-shrink: 0;
+  }
+  .student-info h2 { font-size: 20px; color: #222; font-weight: 800; }
+  .student-info span { font-size: 13px; color: #888; }
+
+  .scores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  .score-box { border-radius: 16px; padding: 16px 12px; text-align: center; }
+  .score-box.van  { background: linear-gradient(135deg, #f093fb22, #f093fb44); border: 2px solid #f093fb; }
+  .score-box.nn   { background: linear-gradient(135deg, #4facfe22, #4facfe44); border: 2px solid #4facfe; }
+  .score-box.toan { background: linear-gradient(135deg, #43e97b22, #43e97b44); border: 2px solid #43e97b; }
+  .score-box.vang { background: #f5f5f5; border: 2px dashed #ccc; }
+  .score-box .mon { font-size: 12px; font-weight: 600; color: #666; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
+  .score-box .diem { font-size: 32px; font-weight: 800; color: #333; line-height: 1; }
+  .score-box.van  .diem { color: #c026d3; }
+  .score-box.nn   .diem { color: #0284c7; }
+  .score-box.toan .diem { color: #16a34a; }
+  .score-box.vang .diem { font-size: 18px; color: #aaa; }
+  .score-box .label { font-size: 11px; color: #999; margin-top: 4px; }
+
+  .total-box {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 16px; padding: 20px; text-align: center; color: white; margin-bottom: 20px;
+  }
+  .total-box .total-label { font-size: 13px; opacity: 0.85; margin-bottom: 4px; }
+  .total-box .total-score { font-size: 52px; font-weight: 800; line-height: 1; }
+  .total-box .total-note { font-size: 12px; opacity: 0.7; margin-top: 6px; }
+
+  .rank-box {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    border-radius: 16px; padding: 16px 20px; margin-bottom: 20px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .rank-box .rank-icon { font-size: 36px; flex-shrink: 0; }
+  .rank-box .rank-text { font-size: 15px; font-weight: 700; color: #92400e; }
+  .rank-box .rank-sub { font-size: 13px; color: #b45309; margin-top: 2px; }
+
+  .ai-box {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 16px; padding: 20px; margin-bottom: 20px; position: relative; overflow: hidden;
+  }
+  .ai-box::before { content: '🤖'; position: absolute; right: -10px; top: -10px; font-size: 80px; opacity: 0.08; }
+  .ai-box .ai-label { font-size: 11px; color: #a78bfa; font-weight: 700; letter-spacing: 2px; margin-bottom: 10px; }
+  .ai-box .ai-text { color: #e2e8f0; font-size: 15px; line-height: 1.8; }
+  .ai-box .ai-typing { display: flex; gap: 6px; align-items: center; padding: 10px 0; }
+  .ai-box .ai-typing span {
+    width: 8px; height: 8px; border-radius: 50%; background: #a78bfa;
+    animation: typing 1.2s infinite;
+  }
+  .ai-box .ai-typing span:nth-child(2) { animation-delay: 0.2s; }
+  .ai-box .ai-typing span:nth-child(3) { animation-delay: 0.4s; }
+
+  .schools-title { font-size: 15px; font-weight: 700; color: #444; margin-bottom: 12px; }
+  .school-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 16px; border-radius: 12px; margin-bottom: 8px; transition: transform 0.2s;
+  }
+  .school-item:hover { transform: translateX(4px); }
+  .school-item.dau { background: #f0fdf4; border-left: 4px solid #22c55e; }
+  .school-item.sat { background: #fffbeb; border-left: 4px solid #f59e0b; }
+  .school-item.kho { background: #fef2f2; border-left: 4px solid #ef4444; }
+  .school-name { font-size: 14px; font-weight: 600; color: #333; }
+  .school-meta { font-size: 12px; color: #888; margin-top: 2px; }
+  .school-badge { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; white-space: nowrap; }
+  .dau .school-badge { background: #dcfce7; color: #15803d; }
+  .sat .school-badge { background: #fef3c7; color: #92400e; }
+  .kho .school-badge { background: #fee2e2; color: #b91c1c; }
+
+  .not-found { text-align: center; padding: 20px; color: #ef4444; font-weight: 600; font-size: 15px; }
+  .footer { text-align: center; color: rgba(255,255,255,0.6); font-size: 12px; margin-top: 10px; }
+
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes typing { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-8px); } }
+  @keyframes pop { 0% { transform: scale(0.8); opacity: 0; } 70% { transform: scale(1.05); } 100% { transform: scale(1); opacity: 1; } }
+  .pop { animation: pop 0.5s ease forwards; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <span class="emoji-big">🎓</span>
+    <h1>Tra Cứu Điểm Thi<br>Tuyển Sinh Lớp 10 Nghệ An 2026</h1>
+    <p>Nhập SBD để xem điểm + AI dự đoán trường 👇</p>
+  </div>
+
+  <div class="card">
+    <div class="input-group">
+      <input type="text" id="sbdInput" placeholder="Nhập số báo danh..." maxlength="12"
+        onkeydown="if(event.key==='Enter') search()">
+      <button class="btn-search" id="btnSearch" onclick="search()">🔍 Tra cứu</button>
+    </div>
+  </div>
+
+  <!-- CARD THỦ KHOA -->
+  <div id="thuKhoaCard">
+    <div class="thu-khoa-header">
+      <span style="font-size:22px">🏆</span>
+      <span class="tk-title">Thủ Khoa 2026</span>
+      <span class="tk-sub">Top 3 toàn tỉnh</span>
+    </div>
+    <div class="tk-list" id="tkList">
+      <!-- render bằng JS -->
+      <div style="text-align:center;color:#aaa;padding:16px;font-size:14px">⏳ Đang tải dữ liệu...</div>
+    </div>
+  </div>
+
+  <div class="card" id="result">
+    <div id="resultContent"></div>
+  </div>
+
+  <div class="footer">Dữ liệu từ Sở GD&ĐT Nghệ An • AI dự đoán mang tính tham khảo</div>
+</div>
+
+<script>
+const API_URL = "https://llm.thesparkdaily.com/v1/chat/completions";
+const API_KEY = "sk-XI0oMcxPtA-180oOH1N4OA";
+const MODEL   = "deepseek-v4-flash";
+
+let diemThiData   = null;
+let diemChuanData = null;
+
+async function loadData() {
+  try {
+    const [r1, r2] = await Promise.all([
+      fetch("diem-tuyen-sinh-10-2026.json"),
+      fetch("diem-chuan-cac-truong-thpt-qua-tung-nam.json")
+    ]);
+    const j1 = await r1.json();
+    const j2 = await r2.json();
+
+    const arr = j1.du_lieu_thi ?? j1;
+    diemThiData = {};
+    arr.forEach(item => {
+      diemThiData[String(item.sbd)] = item;
+    });
+
+    diemChuanData = j2.diem_chuan_thpt_nghe_an?.du_lieu ?? j2.du_lieu ?? j2;
+    console.log("✅ Loaded", Object.keys(diemThiData).length, "thí sinh,", diemChuanData.length, "trường");
+
+    renderThuKhoa();
+  } catch(e) {
+    console.error("❌ Lỗi load data:", e);
+    document.getElementById("tkList").innerHTML =
+      `<div style="text-align:center;color:#ef4444;padding:16px;font-size:14px">❌ Không tải được dữ liệu</div>`;
+  }
+}
+loadData();
+
+// ===== RENDER THỦ KHOA =====
+function renderThuKhoa() {
+  if (!diemThiData) return;
+
+  const medals  = ["🥇", "🥈", "🥉"];
+  const classes  = ["rank1", "rank2", "rank3"];
+  const labels   = ["Thủ khoa", "Á khoa", "Hạng Ba"];
+
+  // Tính tổng điểm từng thí sinh, sắp xếp giảm dần
+  const sorted = Object.values(diemThiData)
+    .map(ts => ({
+      sbd:  String(ts.sbd),
+      ma_hd: ts.ma_hd ?? "—",
+      van:  ts.diem_van,
+      nn:   ts.diem_nn,
+      toan: ts.diem_toan,
+      tong: Math.round(((ts.diem_van ?? 0) + (ts.diem_nn ?? 0) + (ts.diem_toan ?? 0)) * 100) / 100
+    }))
+    .sort((a, b) => b.tong - a.tong)
+    .slice(0, 3);
+
+  const html = sorted.map((ts, i) => `
+    <div class="tk-item ${classes[i]} pop" style="animation-delay:${i * 0.12}s">
+      <div class="tk-medal">${medals[i]}</div>
+      <div class="tk-info">
+        <div class="tk-sbd">SBD: ${ts.sbd} &nbsp;•&nbsp; HĐ: ${ts.ma_hd}</div>
+        <div class="tk-name">${labels[i]}</div>
+        <div class="tk-details">
+          <span class="tk-tag">📖 Văn: ${ts.van ?? "Vắng"}</span>
+          <span class="tk-tag">🌐 NN: ${ts.nn ?? "Vắng"}</span>
+          <span class="tk-tag">📐 Toán: ${ts.toan ?? "Vắng"}</span>
+        </div>
+      </div>
+      <div class="tk-score-box">
+        <div class="tk-score">${ts.tong}</div>
+        <div class="tk-score-label">tổng điểm</div>
+      </div>
+    </div>
+  `).join("");
+
+  document.getElementById("tkList").innerHTML = html;
+}
+
+// ===== ẨN CARD THỦ KHOA KHI TRA CỨU =====
+function hideThuKhoa() {
+  document.getElementById("thuKhoaCard").classList.add("hidden");
+}
+
+// Tính điểm chuẩn dự đoán 2026
+function duDoanDC(truong) {
+  const dc2026 = truong["2026"]?.diem_chuan;
+  if (dc2026 && dc2026 !== "chưa có") return { diem: dc2026, nguon: "2026" };
+
+  const dc2025 = truong["2025"]?.diem_chuan;
+  const dc2024 = truong["2024"]?.diem_chuan;
+  const dc2023 = truong["2023"]?.diem_chuan;
+
+  const valid = v => v && v !== "chưa có";
+
+  if (valid(dc2025) && valid(dc2024)) {
+    const trend = dc2025 - dc2024;
+    const du = Math.round((dc2025 + trend * 0.5) * 100) / 100;
+    return { diem: du, nguon: "dự đoán từ 2024-2025" };
+  }
+  if (valid(dc2025)) return { diem: dc2025, nguon: "2025" };
+  if (valid(dc2024)) return { diem: dc2024, nguon: "2024" };
+  if (valid(dc2023)) return { diem: dc2023, nguon: "2023" };
+  return null;
+}
+
+function tinhRank(tongDiem) {
+  if (!diemThiData) return { rank: "?", total: "?" };
+  const all = Object.values(diemThiData).map(d => {
+    return (d.diem_van ?? 0) + (d.diem_nn ?? 0) + (d.diem_toan ?? 0);
+  }).sort((a, b) => b - a);
+  const rank = all.findIndex(d => d <= tongDiem) + 1;
+  return { rank, total: all.length };
+}
+
+async function goiAI(thongTin) {
+  const { sbd, diem_van, diem_nn, diem_toan, tong, rank, total, truongDau, truongSat, truongKho, soVang } = thongTin;
+
+  const prompt = `Bạn là AI cà khịa nhưng vẫn động viên học sinh vừa tra điểm thi tuyển sinh lớp 10 Nghệ An 2026.
+
+Thông tin thí sinh SBD ${sbd}:
+- Điểm Văn: ${diem_van ?? "Vắng"}
+- Điểm Ngoại Ngữ: ${diem_nn ?? "Vắng"}  
+- Điểm Toán: ${diem_toan ?? "Vắng"}
+- Tổng điểm (môn có mặt): ${tong}
+- Xếp hạng trong dữ liệu: Top ${rank}/${total} thí sinh
+- Số môn vắng: ${soVang}
+- Trường có thể đậu: ${truongDau.map(t=>t.ten).join(", ") || "không rõ"}
+- Trường sát sao: ${truongSat.map(t=>t.ten).join(", ") || "không có"}
+- Trường khó đậu: ${truongKho.map(t=>t.ten).join(", ") || "không có"}
+
+Hãy viết 3-4 câu: cà khịa hài hước GenZ nhưng có động viên, nhận xét điểm từng môn, và chúc mừng hoặc an ủi về kết quả. Dùng tiếng Việt tự nhiên, có thể dùng emoji. KHÔNG dùng markdown.`;
+
+  const res = await fetch(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${API_KEY}`
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      messages: [{ role: "user", content: prompt }],
+      max_tokens: 400,
+      stream: true
+    })
+  });
+
+  return res;
+}
+
+async function search() {
+  const sbd = document.getElementById("sbdInput").value.trim();
+  if (!sbd) return;
+
+  if (!diemThiData) {
+    alert("Đang tải dữ liệu, vui lòng thử lại!");
+    return;
+  }
+
+  const btn = document.getElementById("btnSearch");
+  btn.disabled = true;
+  btn.textContent = "⏳ Đang tìm...";
+
+  // Ẩn card thủ khoa
+  hideThuKhoa();
+
+  const resultDiv  = document.getElementById("result");
+  const contentDiv = document.getElementById("resultContent");
+  resultDiv.style.display = "block";
+
+  const ts = diemThiData[sbd];
+  if (!ts) {
+    contentDiv.innerHTML = `<div class="not-found">😅 Không tìm thấy SBD <strong>${sbd}</strong><br><small>Kiểm tra lại số báo danh nhé!</small></div>`;
+    btn.disabled = false;
+    btn.textContent = "🔍 Tra cứu";
+    return;
+  }
+
+  const van  = ts.diem_van;
+  const nn   = ts.diem_nn;
+  const toan = ts.diem_toan;
+  const soVang = [van, nn, toan].filter(d => d === null || d === undefined).length;
+  const tong = (van ?? 0) + (nn ?? 0) + (toan ?? 0);
+  const tongHienThi = Math.round(tong * 100) / 100;
+
+  const { rank, total } = tinhRank(tong);
+
+  const truongDau = [], truongSat = [], truongKho = [];
+  diemChuanData.forEach(t => {
+    const dd = duDoanDC(t);
+    if (!dd) return;
+    const diff = tong - dd.diem;
+    const obj = { ten: t.ten_truong, dc: dd.diem, nguon: dd.nguon, diff };
+    if (diff >= 1)        truongDau.push(obj);
+    else if (diff >= -1)  truongSat.push(obj);
+    else                  truongKho.push(obj);
+  });
+  truongDau.sort((a,b) => b.dc - a.dc);
+  truongSat.sort((a,b) => Math.abs(a.diff) - Math.abs(b.diff));
+  truongKho.sort((a,b) => b.dc - a.dc);
+
+  function scoreBox(cls, mon, diem) {
+    if (diem === null || diem === undefined) {
+      return `<div class="score-box vang"><div class="mon">${mon}</div><div class="diem">😴</div><div class="label">Vắng thi</div></div>`;
+    }
+    return `<div class="score-box ${cls} pop"><div class="mon">${mon}</div><div class="diem">${diem}</div><div class="label">điểm</div></div>`;
+  }
+
+  function schoolList(arr, cls, badge) {
+    return arr.slice(0, 4).map(s => `
+      <div class="school-item ${cls}">
+        <div>
+          <div class="school-name">${s.ten}</div>
+          <div class="school-meta">Dự đoán: ${s.dc} điểm (${s.nguon})</div>
+        </div>
+        <span class="school-badge">${badge}</span>
+      </div>`).join("");
+  }
+
+  const rankIcon = rank <= 10 ? "🏆" : rank <= 50 ? "🥈" : rank <= 200 ? "🥉" : "📊";
+  const pct = Math.round((1 - rank/total)*100);
+
+  contentDiv.innerHTML = `
+    <div class="student-header">
+      <div class="avatar">🎒</div>
+      <div class="student-info">
+        <h2>SBD: ${sbd}</h2>
+        <span>Mã hội đồng: ${ts.ma_hd} • Kết quả thi 2026</span>
+      </div>
+    </div>
+
+    <div class="scores-grid">
+      ${scoreBox("van",  "Ngữ Văn",    van)}
+      ${scoreBox("nn",   "Ngoại Ngữ",  nn)}
+      ${scoreBox("toan", "Toán",       toan)}
+    </div>
+
+    <div class="total-box pop">
+      <div class="total-label">TỔNG ĐIỂM${soVang > 0 ? ` (${3-soVang} môn)` : ""}</div>
+      <div class="total-score">${tongHienThi}</div>
+      ${soVang > 0 ? `<div class="total-note">⚠️ Vắng ${soVang} môn — tổng chỉ tính môn có mặt</div>` : ""}
+    </div>
+
+    <div class="rank-box pop">
+      <div class="rank-icon">${rankIcon}</div>
+      <div>
+        <div class="rank-text">Top ${rank} / ${total} thí sinh toàn tỉnh</div>
+        <div class="rank-sub">Cao hơn ${pct}% thí sinh trong dữ liệu 📈</div>
+      </div>
+    </div>
+
+    <div class="ai-box">
+      <div class="ai-label">🤖 AI NÓI GÌ NÀO...</div>
+      <div class="ai-text" id="aiText">
+        <div class="ai-typing"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+
+    ${truongDau.length > 0 ? `
+    <div class="schools-title">🟢 Có thể đậu</div>
+    ${schoolList(truongDau, "dau", "✅ Khả năng cao")}` : ""}
+
+    ${truongSat.length > 0 ? `
+    <div class="schools-title">🟡 Sát sao (±1 điểm)</div>
+    ${schoolList(truongSat, "sat", "⚡ Cần theo dõi")}` : ""}
+
+    ${truongKho.length > 0 ? `
+    <div class="schools-title">🔴 Khó đậu hơn</div>
+    ${schoolList(truongKho.slice(0,3), "kho", "❌ Cần cân nhắc")}` : ""}
+  `;
+
+  try {
+    const res = await goiAI({ sbd, diem_van: van, diem_nn: nn, diem_toan: toan, tong: tongHienThi, rank, total, truongDau, truongSat, truongKho, soVang });
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    const aiTextEl = document.getElementById("aiText");
+    aiTextEl.innerHTML = "";
+    let buffer = "";
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split("\n");
+      buffer = lines.pop();
+
+      for (const line of lines) {
+        if (!line.startsWith("data: ")) continue;
+        const data = line.slice(6).trim();
+        if (data === "[DONE]") break;
+        try {
+          const json = JSON.parse(data);
+          const chunk = json.choices?.[0]?.delta?.content ?? "";
+          aiTextEl.innerHTML += chunk.replace(/\n/g, "<br>");
+        } catch {}
+      }
+    }
+  } catch(e) {
+    document.getElementById("aiText").innerHTML = "😅 AI đang bận cà khịa người khác, thử lại sau nhé!";
+  }
+
+  btn.disabled = false;
+  btn.textContent = "🔍 Tra cứu";
+  resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+</script>
+</body>
+</html>
