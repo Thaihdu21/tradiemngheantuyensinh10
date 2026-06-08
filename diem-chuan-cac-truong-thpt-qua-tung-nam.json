@@ -37,7 +37,7 @@
           "diem_binh_quan": "chưa có"
         },
         "2026": {
-          "diem_chuan": "chưa có",
+          "diem_chuan": "25.25 (dự kiến)",
           "diem_binh_quan": "chưa có"
         }
       },
@@ -137,7 +137,7 @@
           "diem_binh_quan": "chưa có"
         },
         "2026": {
-          "diem_chuan": "chưa có",
+          "diem_chuan": "13.75 (dự kiến)",
           "diem_binh_quan": "chưa có"
         }
       },
@@ -277,7 +277,7 @@
           "diem_binh_quan": "chưa có"
         },
         "2026": {
-          "diem_chuan": "chưa có",
+          "diem_chuan": "17.5 (dự kiến)",
           "diem_binh_quan": "chưa có"
         }
       },
@@ -617,7 +617,7 @@
           "diem_binh_quan": "chưa có"
         },
         "2026": {
-          "diem_chuan": "chưa có",
+          "diem_chuan": "17.25 (dự kiến)",
           "diem_binh_quan": "chưa có"
         }
       },
@@ -637,7 +637,7 @@
           "diem_binh_quan": "chưa có"
         },
         "2026": {
-          "diem_chuan": "chưa có",
+          "diem_chuan": "17.25 (dự kiến)",
           "diem_binh_quan": "chưa có"
         }
       },
@@ -668,7 +668,7 @@
           "diem_chuan": 16.58,
           "diem_binh_quan": 5.53
         },
-        "2024": {
+        "2022024": {
           "diem_chuan": "chưa có",
           "diem_binh_quan": "chưa có"
         },
@@ -697,7 +697,7 @@
           "diem_binh_quan": "chưa có"
         },
         "2026": {
-          "diem_chuan": "chưa có",
+          "diem_chuan": "17.75 (dự kiến)",
           "diem_binh_quan": "chưa có"
         }
       },
@@ -726,121 +726,4 @@
         "ten_truong": "THPT Tương Dương 2",
         "2023": {
           "diem_chuan": 7.55,
-          "diem_binh_quan": 2.52
-        },
-        "2024": {
-          "diem_chuan": 11.75,
-          "diem_binh_quan": 3.92
-        },
-        "2025": {
-          "diem_chuan": "chưa có",
-          "diem_binh_quan": "chưa có"
-        },
-        "2026": {
-          "diem_chuan": "chưa có",
-          "diem_binh_quan": "chưa có"
-        }
-      },
-      {
-        "stt": 38,
-        "ten_truong": "THPT Bắc Yên Thành",
-        "2023": {
-          "diem_chuan": "chưa có",
-          "diem_binh_quan": "chưa có"
-        },
-        "2024": {
-          "diem_chuan": "chưa có",
-          "diem_binh_quan": "chưa có"
-        },
-        "2025": {
-          "diem_chuan": 15.75,
-          "diem_binh_quan": "chưa có"
-        },
-        "2026": {
-          "diem_chuan": "chưa có",
-          "diem_binh_quan": "chưa có"
-        }
-      },
-      {
-        "stt": 39,
-        "ten_truong": "THPT Nam Yên Thành",
-        "2023": {
-          "diem_chuan": 12.9,
-          "diem_binh_quan": 4.3
-        },
-        "2024": {
-          "diem_chuan": 14.25,
-          "diem_binh_quan": 4.75
-        },
-        "2025": {
-          "diem_chuan": 12.5,
-          "diem_binh_quan": "chưa có"
-        },
-        "2026": {
-          "diem_chuan": "chưa có",
-          "diem_binh_quan": "chưa có"
-        }
-      },
-      {
-        "stt": 40,
-        "ten_truong": "THPT Phan Đăng Lưu",
-        "2023": {
-          "diem_chuan": 17.05,
-          "diem_binh_quan": 5.68
-        },
-        "2024": {
-          "diem_chuan": 13.8,
-          "diem_binh_quan": 4.6
-        },
-        "2025": {
-          "diem_chuan": "chưa có",
-          "diem_binh_quan": "chưa có"
-        },
-        "2026": {
-          "diem_chuan": "chưa có",
-          "diem_binh_quan": "chưa có"
-        }
-      },
-      {
-        "stt": 41,
-        "ten_truong": "THPT Phan Thúc Trực",
-        "2023": {
-          "diem_chuan": "chưa có",
-          "diem_binh_quan": "chưa có"
-        },
-        "2024": {
-          "diem_chuan": 12.75,
-          "diem_binh_quan": 4.25
-        },
-        "2025": {
-          "diem_chuan": 13,
-          "diem_binh_quan": "chưa có"
-        },
-        "2026": {
-          "diem_chuan": "chưa có",
-          "diem_binh_quan": "chưa có"
-        }
-      },
-      {
-        "stt": 42,
-        "ten_truong": "THPT Yên Thành 3",
-        "2023": {
-          "diem_chuan": "chưa có",
-          "diem_binh_quan": "chưa có"
-        },
-        "2024": {
-          "diem_chuan": "chưa có",
-          "diem_binh_quan": "chưa có"
-        },
-        "2025": {
-          "diem_chuan": 13.25,
-          "diem_binh_quan": "chưa có"
-        },
-        "2026": {
-          "diem_chuan": "chưa có",
-          "diem_binh_quan": "chưa có"
-        }
-      }
-    ]
-  }
-}
+          "diem_binh_quan": 2.
