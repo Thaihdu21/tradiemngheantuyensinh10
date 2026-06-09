@@ -1,163 +1,354 @@
 <!DOCTYPE html>
-<html lang="vi">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0049)https://tradiemngheantuyensinh10-x1vf.vercel.app/ -->
+<html lang="vi" data-yd-content-ready="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tra Cứu Điểm Thi Lớp 10 Nghệ An 2026</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap');
-  * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-  body {{
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
     font-family: 'Be Vietnam Pro', sans-serif;
     min-height: 100vh;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-    display: flex; flex-direction: column; align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 30px 16px;
-  }}
-  .container {{ width: 100%; max-width: 700px; }}
-  .header {{ text-align: center; margin-bottom: 30px; animation: fadeDown 0.6s ease; }}
-  .header .emoji-big {{ font-size: 60px; display: block; margin-bottom: 10px; }}
-  .header h1 {{ color: white; font-size: 26px; font-weight: 800; text-shadow: 0 2px 10px rgba(0,0,0,0.3); line-height: 1.3; }}
-  .header p {{ color: rgba(255,255,255,0.85); margin-top: 8px; font-size: 14px; }}
-  .card {{
-    background: white; border-radius: 24px; padding: 28px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.2); margin-bottom: 20px;
+  }
+
+  .container { width: 100%; max-width: 700px; }
+
+  .header { text-align: center; margin-bottom: 30px; animation: fadeDown 0.6s ease; }
+  .header .emoji-big { font-size: 60px; display: block; margin-bottom: 10px; }
+  .header h1 { color: white; font-size: 26px; font-weight: 800; text-shadow: 0 2px 10px rgba(0,0,0,0.3); line-height: 1.3; }
+  .header p { color: rgba(255,255,255,0.85); margin-top: 8px; font-size: 14px; }
+
+  .card {
+    background: white;
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
     animation: fadeUp 0.6s ease;
-  }}
-  .input-group {{ display: flex; gap: 12px; flex-wrap: wrap; }}
-  .input-group input {{
-    flex: 1; min-width: 180px; padding: 16px 20px;
-    border: 2.5px solid #e0e0e0; border-radius: 14px;
+  }
+
+  .input-group { display: flex; gap: 12px; flex-wrap: wrap; }
+  .input-group input {
+    flex: 1; min-width: 180px;
+    padding: 16px 20px;
+    border: 2.5px solid #e0e0e0;
+    border-radius: 14px;
     font-size: 18px; font-family: inherit; font-weight: 600; letter-spacing: 2px;
     outline: none; transition: all 0.3s; color: #333;
-  }}
-  .input-group input:focus {{ border-color: #667eea; box-shadow: 0 0 0 4px rgba(102,126,234,0.15); }}
-  .input-group input::placeholder {{ letter-spacing: 0; font-weight: 400; color: #aaa; }}
-  .btn-search {{
+  }
+  .input-group input:focus { border-color: #667eea; box-shadow: 0 0 0 4px rgba(102,126,234,0.15); }
+  .input-group input::placeholder { letter-spacing: 0; font-weight: 400; color: #aaa; }
+
+  .btn-search {
     padding: 16px 28px;
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white; border: none; border-radius: 14px;
     font-size: 16px; font-weight: 700; font-family: inherit;
     cursor: pointer; transition: all 0.3s; white-space: nowrap;
-  }}
-  .btn-search:hover {{ transform: translateY(-2px); box-shadow: 0 8px 25px rgba(102,126,234,0.5); }}
-  .btn-search:disabled {{ opacity: 0.6; cursor: not-allowed; transform: none; }}
+  }
+  .btn-search:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(102,126,234,0.5); }
+  .btn-search:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
-  /* THỦ KHOA */
-  #thuKhoaCard {{
-    background: white; border-radius: 24px; padding: 24px 28px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.2); margin-bottom: 20px;
-    animation: fadeUp 0.6s ease; transition: all 0.4s ease; overflow: hidden;
-  }}
-  #thuKhoaCard.hidden {{ opacity: 0; max-height: 0; padding: 0 28px; margin-bottom: 0; pointer-events: none; }}
-  .thu-khoa-header {{ display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }}
-  .thu-khoa-header .tk-title {{ font-size: 16px; font-weight: 800; color: #333; }}
-  .thu-khoa-header .tk-sub {{ font-size: 12px; color: #aaa; margin-left: auto; }}
-  .tk-list {{ display: flex; flex-direction: column; gap: 10px; }}
-  .tk-item {{
+  /* ===== THỦ KHOA CARD ===== */
+  #thuKhoaCard {
+    background: white;
+    border-radius: 24px;
+    padding: 24px 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    animation: fadeUp 0.6s ease;
+    transition: all 0.4s ease;
+    overflow: hidden;
+  }
+  #thuKhoaCard.hidden {
+    opacity: 0;
+    max-height: 0;
+    padding: 0 28px;
+    margin-bottom: 0;
+    pointer-events: none;
+  }
+
+  .thu-khoa-header {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 16px;
+  }
+  .thu-khoa-header .tk-title {
+    font-size: 16px; font-weight: 800; color: #333;
+  }
+  .thu-khoa-header .tk-sub {
+    font-size: 12px; color: #aaa; margin-left: auto;
+  }
+
+  .tk-list { display: flex; flex-direction: column; gap: 10px; }
+
+  .tk-item {
     display: flex; align-items: center; gap: 14px;
-    padding: 14px 16px; border-radius: 16px; transition: transform 0.2s;
-  }}
-  .tk-item:hover {{ transform: translateX(4px); }}
-  .tk-item.rank1 {{ background: linear-gradient(135deg, #fff8e1, #ffe082); border: 2px solid #ffd54f; }}
-  .tk-item.rank2 {{ background: linear-gradient(135deg, #f5f5f5, #e0e0e0); border: 2px solid #bdbdbd; }}
-  .tk-item.rank3 {{ background: linear-gradient(135deg, #fbe9e7, #ffccbc); border: 2px solid #ffab91; }}
-  .tk-medal {{ font-size: 28px; flex-shrink: 0; }}
-  .tk-info {{ flex: 1; min-width: 0; }}
-  .tk-info .tk-sbd {{ font-size: 13px; color: #888; font-weight: 600; }}
-  .tk-info .tk-name {{ font-size: 15px; font-weight: 800; color: #222; margin-top: 1px; }}
-  .tk-score-box {{ text-align: right; flex-shrink: 0; }}
-  .tk-score-box .tk-score {{ font-size: 28px; font-weight: 800; line-height: 1; }}
-  .tk-item.rank1 .tk-score {{ color: #f59e0b; }}
-  .tk-item.rank2 .tk-score {{ color: #6b7280; }}
-  .tk-item.rank3 .tk-score {{ color: #ea580c; }}
-  .tk-score-box .tk-score-label {{ font-size: 11px; color: #aaa; margin-top: 2px; }}
-  .tk-details {{ display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; }}
-  .tk-tag {{
+    padding: 14px 16px; border-radius: 16px;
+    transition: transform 0.2s;
+  }
+  .tk-item:hover { transform: translateX(4px); }
+  .tk-item.rank1 { background: linear-gradient(135deg, #fff8e1, #ffe082); border: 2px solid #ffd54f; }
+  .tk-item.rank2 { background: linear-gradient(135deg, #f5f5f5, #e0e0e0); border: 2px solid #bdbdbd; }
+  .tk-item.rank3 { background: linear-gradient(135deg, #fbe9e7, #ffccbc); border: 2px solid #ffab91; }
+
+  .tk-medal { font-size: 28px; flex-shrink: 0; }
+  .tk-info { flex: 1; min-width: 0; }
+  .tk-info .tk-sbd { font-size: 13px; color: #888; font-weight: 600; }
+  .tk-info .tk-name { font-size: 15px; font-weight: 800; color: #222; margin-top: 1px; }
+  .tk-score-box { text-align: right; flex-shrink: 0; }
+  .tk-score-box .tk-score { font-size: 28px; font-weight: 800; line-height: 1; }
+  .tk-item.rank1 .tk-score { color: #f59e0b; }
+  .tk-item.rank2 .tk-score { color: #6b7280; }
+  .tk-item.rank3 .tk-score { color: #ea580c; }
+  .tk-score-box .tk-score-label { font-size: 11px; color: #aaa; margin-top: 2px; }
+
+  .tk-details { display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap; }
+  .tk-tag {
     font-size: 11px; font-weight: 600; padding: 3px 8px;
     border-radius: 20px; background: rgba(255,255,255,0.7); color: #555;
-  }}
+  }
 
-  /* KẾT QUẢ */
-  #result {{ display: none; }}
-  .student-header {{
+  /* ===== KẾT QUẢ ===== */
+  #result { display: none; }
+
+  .student-header {
     display: flex; align-items: center; gap: 16px;
-    margin-bottom: 20px; padding-bottom: 20px; border-bottom: 2px dashed #f0f0f0;
-  }}
-  .avatar {{
+    margin-bottom: 20px; padding-bottom: 20px;
+    border-bottom: 2px dashed #f0f0f0;
+  }
+  .avatar {
     width: 60px; height: 60px; border-radius: 50%;
     background: linear-gradient(135deg, #667eea, #f093fb);
     display: flex; align-items: center; justify-content: center;
     font-size: 28px; flex-shrink: 0;
-  }}
-  .student-info h2 {{ font-size: 20px; color: #222; font-weight: 800; }}
-  .student-info span {{ font-size: 13px; color: #888; }}
-  .scores-grid {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }}
-  .score-box {{ border-radius: 16px; padding: 16px 12px; text-align: center; }}
-  .score-box.van  {{ background: linear-gradient(135deg, #f093fb22, #f093fb44); border: 2px solid #f093fb; }}
-  .score-box.nn   {{ background: linear-gradient(135deg, #4facfe22, #4facfe44); border: 2px solid #4facfe; }}
-  .score-box.toan {{ background: linear-gradient(135deg, #43e97b22, #43e97b44); border: 2px solid #43e97b; }}
-  .score-box.vang {{ background: #f5f5f5; border: 2px dashed #ccc; }}
-  .score-box .mon {{ font-size: 12px; font-weight: 600; color: #666; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }}
-  .score-box .diem {{ font-size: 32px; font-weight: 800; color: #333; line-height: 1; }}
-  .score-box.van  .diem {{ color: #c026d3; }}
-  .score-box.nn   .diem {{ color: #0284c7; }}
-  .score-box.toan .diem {{ color: #16a34a; }}
-  .score-box.vang .diem {{ font-size: 18px; color: #aaa; }}
-  .score-box .label {{ font-size: 11px; color: #999; margin-top: 4px; }}
-  .total-box {{
+  }
+  .student-info h2 { font-size: 20px; color: #222; font-weight: 800; }
+  .student-info span { font-size: 13px; color: #888; }
+
+  .scores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  .score-box { border-radius: 16px; padding: 16px 12px; text-align: center; }
+  .score-box.van  { background: linear-gradient(135deg, #f093fb22, #f093fb44); border: 2px solid #f093fb; }
+  .score-box.nn   { background: linear-gradient(135deg, #4facfe22, #4facfe44); border: 2px solid #4facfe; }
+  .score-box.toan { background: linear-gradient(135deg, #43e97b22, #43e97b44); border: 2px solid #43e97b; }
+  .score-box.vang { background: #f5f5f5; border: 2px dashed #ccc; }
+  .score-box .mon { font-size: 12px; font-weight: 600; color: #666; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
+  .score-box .diem { font-size: 32px; font-weight: 800; color: #333; line-height: 1; }
+  .score-box.van  .diem { color: #c026d3; }
+  .score-box.nn   .diem { color: #0284c7; }
+  .score-box.toan .diem { color: #16a34a; }
+  .score-box.vang .diem { font-size: 18px; color: #aaa; }
+  .score-box .label { font-size: 11px; color: #999; margin-top: 4px; }
+
+  .total-box {
     background: linear-gradient(135deg, #667eea, #764ba2);
     border-radius: 16px; padding: 20px; text-align: center; color: white; margin-bottom: 20px;
-  }}
-  .total-box .total-label {{ font-size: 13px; opacity: 0.85; margin-bottom: 4px; }}
-  .total-box .total-score {{ font-size: 52px; font-weight: 800; line-height: 1; }}
-  .total-box .total-note {{ font-size: 12px; opacity: 0.7; margin-top: 6px; }}
-  .rank-box {{
+  }
+  .total-box .total-label { font-size: 13px; opacity: 0.85; margin-bottom: 4px; }
+  .total-box .total-score { font-size: 52px; font-weight: 800; line-height: 1; }
+  .total-box .total-note { font-size: 12px; opacity: 0.7; margin-top: 6px; }
+
+  .rank-box {
     background: linear-gradient(135deg, #ffecd2, #fcb69f);
     border-radius: 16px; padding: 16px 20px; margin-bottom: 20px;
     display: flex; align-items: center; gap: 14px;
-  }}
-  .rank-box .rank-icon {{ font-size: 36px; flex-shrink: 0; }}
-  .rank-box .rank-text {{ font-size: 15px; font-weight: 700; color: #92400e; }}
-  .rank-box .rank-sub {{ font-size: 13px; color: #b45309; margin-top: 2px; }}
+  }
+  .rank-box .rank-icon { font-size: 36px; flex-shrink: 0; }
+  .rank-box .rank-text { font-size: 15px; font-weight: 700; color: #92400e; }
+  .rank-box .rank-sub { font-size: 13px; color: #b45309; margin-top: 2px; }
 
-  .schools-title {{ font-size: 15px; font-weight: 700; color: #444; margin-bottom: 12px; }}
-  .school-item {{
+  .ai-box {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 16px; padding: 20px; margin-bottom: 20px; position: relative; overflow: hidden;
+  }
+  .ai-box::before { content: '🤖'; position: absolute; right: -10px; top: -10px; font-size: 80px; opacity: 0.08; }
+  .ai-box .ai-label { font-size: 11px; color: #a78bfa; font-weight: 700; letter-spacing: 2px; margin-bottom: 10px; }
+  .ai-box .ai-text { color: #e2e8f0; font-size: 15px; line-height: 1.8; }
+  .ai-box .ai-typing { display: flex; gap: 6px; align-items: center; padding: 10px 0; }
+  .ai-box .ai-typing span {
+    width: 8px; height: 8px; border-radius: 50%; background: #a78bfa;
+    animation: typing 1.2s infinite;
+  }
+  .ai-box .ai-typing span:nth-child(2) { animation-delay: 0.2s; }
+  .ai-box .ai-typing span:nth-child(3) { animation-delay: 0.4s; }
+
+  .schools-title { font-size: 15px; font-weight: 700; color: #444; margin-bottom: 12px; }
+  .school-item {
     display: flex; align-items: center; justify-content: space-between;
     padding: 14px 16px; border-radius: 12px; margin-bottom: 8px; transition: transform 0.2s;
-  }}
-  .school-item:hover {{ transform: translateX(4px); }}
-  .school-item.dau {{ background: #f0fdf4; border-left: 4px solid #22c55e; }}
-  .school-item.sat {{ background: #fffbeb; border-left: 4px solid #f59e0b; }}
-  .school-item.kho {{ background: #fef2f2; border-left: 4px solid #ef4444; }}
-  .school-name {{ font-size: 14px; font-weight: 600; color: #333; }}
-  .school-meta {{ font-size: 12px; color: #888; margin-top: 2px; }}
-  .school-badge {{ font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; white-space: nowrap; }}
-  .dau .school-badge {{ background: #dcfce7; color: #15803d; }}
-  .sat .school-badge {{ background: #fef3c7; color: #92400e; }}
-  .kho .school-badge {{ background: #fee2e2; color: #b91c1c; }}
-  .not-found {{ text-align: center; padding: 20px; color: #ef4444; font-weight: 600; font-size: 15px; }}
-  .footer {{ text-align: center; color: rgba(255,255,255,0.6); font-size: 12px; margin-top: 10px; }}
+  }
+  .school-item:hover { transform: translateX(4px); }
+  .school-item.dau { background: #f0fdf4; border-left: 4px solid #22c55e; }
+  .school-item.sat { background: #fffbeb; border-left: 4px solid #f59e0b; }
+  .school-item.kho { background: #fef2f2; border-left: 4px solid #ef4444; }
+  .school-name { font-size: 14px; font-weight: 600; color: #333; }
+  .school-meta { font-size: 12px; color: #888; margin-top: 2px; }
+  .school-badge { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; white-space: nowrap; }
+  .dau .school-badge { background: #dcfce7; color: #15803d; }
+  .sat .school-badge { background: #fef3c7; color: #92400e; }
+  .kho .school-badge { background: #fee2e2; color: #b91c1c; }
 
-  @media (max-width: 480px) {{
-    body {{ padding: 20px 12px; }}
-    .header .emoji-big {{ font-size: 48px; }}
-    .header h1 {{ font-size: 20px; }}
-    .input-group {{ flex-direction: column; gap: 10px; }}
-    .input-group input {{ min-width: unset; width: 100%; font-size: 16px; }}
-    .btn-search {{ width: 100%; }}
-    .scores-grid {{ gap: 8px; }}
-    .score-box .diem {{ font-size: 26px; }}
-    .total-box .total-score {{ font-size: 44px; }}
-  }}
+  .not-found { text-align: center; padding: 20px; color: #ef4444; font-weight: 600; font-size: 15px; }
+  .footer { text-align: center; color: rgba(255,255,255,0.6); font-size: 12px; margin-top: 10px; }
 
-  @keyframes fadeDown {{ from {{ opacity: 0; transform: translateY(-20px); }} to {{ opacity: 1; transform: translateY(0); }} }}
-  @keyframes fadeUp {{ from {{ opacity: 0; transform: translateY(20px); }} to {{ opacity: 1; transform: translateY(0); }} }}
-  @keyframes pop {{ 0% {{ transform: scale(0.8); opacity: 0; }} 70% {{ transform: scale(1.05); }} 100% {{ transform: scale(1); opacity: 1; }} }}
-  .pop {{ animation: pop 0.5s ease forwards; }}
+  /* ===== MOBILE CSS ===== */
+  @media (max-width: 480px) {
+    body {
+      padding: 20px 12px;
+    }
+
+    .header { margin-bottom: 20px; }
+    .header .emoji-big { font-size: 48px; }
+    .header h1 { font-size: 20px; }
+    .header p { font-size: 13px; }
+
+    .card {
+      padding: 18px 16px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    /* Input + button xếp dọc trên mobile */
+    .input-group {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .input-group input {
+      min-width: unset;
+      width: 100%;
+      font-size: 16px; /* tránh iOS zoom */
+      padding: 14px 16px;
+      letter-spacing: 1.5px;
+    }
+    .btn-search {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 14px;
+    }
+
+    /* Thủ khoa card */
+    #thuKhoaCard {
+      padding: 18px 16px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .thu-khoa-header .tk-title { font-size: 15px; }
+    .thu-khoa-header .tk-sub { font-size: 11px; }
+
+    .tk-item {
+      padding: 12px 12px;
+      gap: 10px;
+    }
+    .tk-medal { font-size: 24px; }
+    .tk-info .tk-sbd { font-size: 11px; }
+    .tk-info .tk-name { font-size: 13px; }
+    .tk-score-box .tk-score { font-size: 22px; }
+    .tk-tag { font-size: 10px; padding: 2px 6px; }
+
+    /* Kết quả card */
+    .student-header {
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+    }
+    .avatar { width: 50px; height: 50px; font-size: 24px; }
+    .student-info h2 { font-size: 17px; }
+    .student-info span { font-size: 11px; }
+
+    /* Điểm 3 môn - giữ 3 cột nhưng nhỏ hơn */
+    .scores-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .score-box {
+      padding: 12px 6px;
+      border-radius: 12px;
+    }
+    .score-box .mon {
+      font-size: 10px;
+      letter-spacing: 0;
+      margin-bottom: 4px;
+    }
+    .score-box .diem { font-size: 26px; }
+    .score-box.vang .diem { font-size: 16px; }
+    .score-box .label { font-size: 10px; }
+
+    /* Tổng điểm */
+    .total-box {
+      padding: 16px;
+      border-radius: 14px;
+      margin-bottom: 14px;
+    }
+    .total-box .total-label { font-size: 12px; }
+    .total-box .total-score { font-size: 44px; }
+    .total-box .total-note { font-size: 11px; }
+
+    /* Xếp hạng */
+    .rank-box {
+      padding: 14px 14px;
+      gap: 10px;
+      border-radius: 14px;
+      margin-bottom: 14px;
+    }
+    .rank-box .rank-icon { font-size: 30px; }
+    .rank-box .rank-text { font-size: 13px; }
+    .rank-box .rank-sub { font-size: 12px; }
+
+    /* AI box */
+    .ai-box {
+      padding: 16px;
+      border-radius: 14px;
+      margin-bottom: 14px;
+    }
+    .ai-box .ai-text { font-size: 14px; line-height: 1.7; }
+
+    /* Danh sách trường */
+    .schools-title { font-size: 14px; margin-bottom: 10px; }
+    .school-item {
+      padding: 12px 12px;
+      border-radius: 10px;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .school-name { font-size: 13px; }
+    .school-meta { font-size: 11px; }
+    .school-badge {
+      font-size: 10px;
+      padding: 3px 8px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .not-found { font-size: 14px; padding: 16px; }
+    .footer { font-size: 11px; }
+  }
+
+  /* Cho màn hình rất nhỏ (320px) */
+  @media (max-width: 360px) {
+    .header h1 { font-size: 18px; }
+    .score-box .diem { font-size: 22px; }
+    .score-box .mon { font-size: 9px; }
+    .tk-item { gap: 8px; }
+    .tk-score-box .tk-score { font-size: 20px; }
+  }
+
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes typing { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-8px); } }
+  @keyframes pop { 0% { transform: scale(0.8); opacity: 0; } 70% { transform: scale(1.05); } 100% { transform: scale(1); opacity: 1; } }
+  .pop { animation: pop 0.5s ease forwards; }
 </style>
-</head>
-<body>
+<script src="chrome-extension://oglffgiaiekgeicdgkdlnlkhliajdlja/injectScript.js"></script><style>body.swal2-shown:not(.swal2-no-backdrop,.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto !important}body.swal2-no-backdrop .swal2-container{background-color:rgba(0,0,0,0) !important;pointer-events:none}body.swal2-no-backdrop .swal2-container .swal2-popup{pointer-events:all}body.swal2-no-backdrop .swal2-container .swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}body.swal2-toast-shown .swal2-container{box-sizing:border-box;width:360px;max-width:100%;background-color:rgba(0,0,0,0);pointer-events:none}body.swal2-toast-shown .swal2-container.swal2-top{inset:0 auto auto 50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{inset:0 0 auto auto}body.swal2-toast-shown .swal2-container.swal2-top-start,body.swal2-toast-shown .swal2-container.swal2-top-left{inset:0 auto auto 0}body.swal2-toast-shown .swal2-container.swal2-center-start,body.swal2-toast-shown .swal2-container.swal2-center-left{inset:50% auto auto 0;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{inset:50% auto auto 50%;transform:translate(-50%, -50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{inset:50% 0 auto auto;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-start,body.swal2-toast-shown .swal2-container.swal2-bottom-left{inset:auto auto 0 0}body.swal2-toast-shown .swal2-container.swal2-bottom{inset:auto auto 0 50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{inset:auto 0 0 auto}@media print{body.swal2-shown:not(.swal2-no-backdrop,.swal2-toast-shown){overflow-y:scroll !important}body.swal2-shown:not(.swal2-no-backdrop,.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop,.swal2-toast-shown) .swal2-container{position:static !important}}div:where(.swal2-container){display:grid;position:fixed;z-index:1060;inset:0;box-sizing:border-box;grid-template-areas:"top-start     top            top-end" "center-start  center         center-end" "bottom-start  bottom-center  bottom-end";grid-template-rows:minmax(min-content, auto) minmax(min-content, auto) minmax(min-content, auto);height:100%;padding:.625em;overflow-x:hidden;transition:background-color .1s;-webkit-overflow-scrolling:touch}div:where(.swal2-container).swal2-backdrop-show,div:where(.swal2-container).swal2-noanimation{background:rgba(0,0,0,.4)}div:where(.swal2-container).swal2-backdrop-hide{background:rgba(0,0,0,0) !important}div:where(.swal2-container).swal2-top-start,div:where(.swal2-container).swal2-center-start,div:where(.swal2-container).swal2-bottom-start{grid-template-columns:minmax(0, 1fr) auto auto}div:where(.swal2-container).swal2-top,div:where(.swal2-container).swal2-center,div:where(.swal2-container).swal2-bottom{grid-template-columns:auto minmax(0, 1fr) auto}div:where(.swal2-container).swal2-top-end,div:where(.swal2-container).swal2-center-end,div:where(.swal2-container).swal2-bottom-end{grid-template-columns:auto auto minmax(0, 1fr)}div:where(.swal2-container).swal2-top-start>.swal2-popup{align-self:start}div:where(.swal2-container).swal2-top>.swal2-popup{grid-column:2;place-self:start center}div:where(.swal2-container).swal2-top-end>.swal2-popup,div:where(.swal2-container).swal2-top-right>.swal2-popup{grid-column:3;place-self:start end}div:where(.swal2-container).swal2-center-start>.swal2-popup,div:where(.swal2-container).swal2-center-left>.swal2-popup{grid-row:2;align-self:center}div:where(.swal2-container).swal2-center>.swal2-popup{grid-column:2;grid-row:2;place-self:center center}div:where(.swal2-container).swal2-center-end>.swal2-popup,div:where(.swal2-container).swal2-center-right>.swal2-popup{grid-column:3;grid-row:2;place-self:center end}div:where(.swal2-container).swal2-bottom-start>.swal2-popup,div:where(.swal2-container).swal2-bottom-left>.swal2-popup{grid-column:1;grid-row:3;align-self:end}div:where(.swal2-container).swal2-bottom>.swal2-popup{grid-column:2;grid-row:3;place-self:end center}div:where(.swal2-container).swal2-bottom-end>.swal2-popup,div:where(.swal2-container).swal2-bottom-right>.swal2-popup{grid-column:3;grid-row:3;place-self:end end}div:where(.swal2-container).swal2-grow-row>.swal2-popup,div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup{grid-column:1/4;width:100%}div:where(.swal2-container).swal2-grow-column>.swal2-popup,div:where(.swal2-container).swal2-grow-fullscreen>.swal2-popup{grid-row:1/4;align-self:stretch}div:where(.swal2-container).swal2-no-transition{transition:none !important}div:where(.swal2-container) div:where(.swal2-popup){display:none;position:relative;box-sizing:border-box;grid-template-columns:minmax(0, 100%);width:32em;max-width:100%;padding:0 0 1.25em;border:none;border-radius:5px;background:#fff;color:hsl(0,0%,33%);font-family:inherit;font-size:1rem}div:where(.swal2-container) div:where(.swal2-popup):focus{outline:none}div:where(.swal2-container) div:where(.swal2-popup).swal2-loading{overflow-y:hidden}div:where(.swal2-container) div:where(.swal2-popup).swal2-draggable{cursor:grab}div:where(.swal2-container) div:where(.swal2-popup).swal2-draggable div:where(.swal2-icon){cursor:grab}div:where(.swal2-container) div:where(.swal2-popup).swal2-dragging{cursor:grabbing}div:where(.swal2-container) div:where(.swal2-popup).swal2-dragging div:where(.swal2-icon){cursor:grabbing}div:where(.swal2-container) h2:where(.swal2-title){position:relative;max-width:100%;margin:0;padding:.8em 1em 0;color:inherit;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word;cursor:initial}div:where(.swal2-container) div:where(.swal2-actions){display:flex;z-index:1;box-sizing:border-box;flex-wrap:wrap;align-items:center;justify-content:center;width:auto;margin:1.25em auto 0;padding:0}div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))}div:where(.swal2-container) div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))}div:where(.swal2-container) div:where(.swal2-loader){display:none;align-items:center;justify-content:center;width:2.2em;height:2.2em;margin:0 1.875em;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border-width:.25em;border-style:solid;border-radius:100%;border-color:#2778c4 rgba(0,0,0,0) #2778c4 rgba(0,0,0,0)}div:where(.swal2-container) button:where(.swal2-styled){margin:.3125em;padding:.625em 1.1em;transition:box-shadow .1s;box-shadow:0 0 0 3px rgba(0,0,0,0);font-weight:500}div:where(.swal2-container) button:where(.swal2-styled):not([disabled]){cursor:pointer}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm){border:0;border-radius:.25em;background:initial;background-color:#7066e0;color:#fff;font-size:1em}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm):focus-visible{box-shadow:0 0 0 3px rgba(112,102,224,.5)}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny){border:0;border-radius:.25em;background:initial;background-color:#dc3741;color:#fff;font-size:1em}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny):focus-visible{box-shadow:0 0 0 3px rgba(220,55,65,.5)}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel){border:0;border-radius:.25em;background:initial;background-color:#6e7881;color:#fff;font-size:1em}div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel):focus-visible{box-shadow:0 0 0 3px rgba(110,120,129,.5)}div:where(.swal2-container) button:where(.swal2-styled).swal2-default-outline:focus-visible{box-shadow:0 0 0 3px rgba(100,150,200,.5)}div:where(.swal2-container) button:where(.swal2-styled):focus-visible{outline:none}div:where(.swal2-container) button:where(.swal2-styled)::-moz-focus-inner{border:0}div:where(.swal2-container) div:where(.swal2-footer){margin:1em 0 0;padding:1em 1em 0;border-top:1px solid #eee;color:inherit;font-size:1em;text-align:center;cursor:initial}div:where(.swal2-container) .swal2-timer-progress-bar-container{position:absolute;right:0;bottom:0;left:0;grid-column:auto !important;overflow:hidden;border-bottom-right-radius:5px;border-bottom-left-radius:5px}div:where(.swal2-container) div:where(.swal2-timer-progress-bar){width:100%;height:.25em;background:rgba(0,0,0,.2)}div:where(.swal2-container) img:where(.swal2-image){max-width:100%;margin:2em auto 1em;cursor:initial}div:where(.swal2-container) button:where(.swal2-close){z-index:2;align-items:center;justify-content:center;width:1.2em;height:1.2em;margin-top:0;margin-right:0;margin-bottom:-1.2em;padding:0;overflow:hidden;transition:color .1s,box-shadow .1s;border:none;border-radius:5px;background:rgba(0,0,0,0);color:#ccc;font-family:monospace;font-size:2.5em;cursor:pointer;justify-self:end}div:where(.swal2-container) button:where(.swal2-close):hover{transform:none;background:rgba(0,0,0,0);color:#f27474}div:where(.swal2-container) button:where(.swal2-close):focus-visible{outline:none;box-shadow:inset 0 0 0 3px rgba(100,150,200,.5)}div:where(.swal2-container) button:where(.swal2-close)::-moz-focus-inner{border:0}div:where(.swal2-container) div:where(.swal2-html-container){z-index:1;justify-content:center;margin:0;padding:1em 1.6em .3em;overflow:auto;color:inherit;font-size:1.125em;font-weight:normal;line-height:normal;text-align:center;word-wrap:break-word;word-break:break-word;cursor:initial}div:where(.swal2-container) input:where(.swal2-input),div:where(.swal2-container) input:where(.swal2-file),div:where(.swal2-container) textarea:where(.swal2-textarea),div:where(.swal2-container) select:where(.swal2-select),div:where(.swal2-container) div:where(.swal2-radio),div:where(.swal2-container) label:where(.swal2-checkbox){margin:1em 2em 3px}div:where(.swal2-container) input:where(.swal2-input),div:where(.swal2-container) input:where(.swal2-file),div:where(.swal2-container) textarea:where(.swal2-textarea){box-sizing:border-box;width:auto;transition:border-color .1s,box-shadow .1s;border:1px solid hsl(0,0%,85%);border-radius:.1875em;background:rgba(0,0,0,0);box-shadow:inset 0 1px 1px rgba(0,0,0,.06),0 0 0 3px rgba(0,0,0,0);color:inherit;font-size:1.125em}div:where(.swal2-container) input:where(.swal2-input).swal2-inputerror,div:where(.swal2-container) input:where(.swal2-file).swal2-inputerror,div:where(.swal2-container) textarea:where(.swal2-textarea).swal2-inputerror{border-color:#f27474 !important;box-shadow:0 0 2px #f27474 !important}div:where(.swal2-container) input:where(.swal2-input):focus,div:where(.swal2-container) input:where(.swal2-file):focus,div:where(.swal2-container) textarea:where(.swal2-textarea):focus{border:1px solid #b4dbed;outline:none;box-shadow:inset 0 1px 1px rgba(0,0,0,.06),0 0 0 3px rgba(100,150,200,.5)}div:where(.swal2-container) input:where(.swal2-input)::placeholder,div:where(.swal2-container) input:where(.swal2-file)::placeholder,div:where(.swal2-container) textarea:where(.swal2-textarea)::placeholder{color:#ccc}div:where(.swal2-container) .swal2-range{margin:1em 2em 3px;background:#fff}div:where(.swal2-container) .swal2-range input{width:80%}div:where(.swal2-container) .swal2-range output{width:20%;color:inherit;font-weight:600;text-align:center}div:where(.swal2-container) .swal2-range input,div:where(.swal2-container) .swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}div:where(.swal2-container) .swal2-input{height:2.625em;padding:0 .75em}div:where(.swal2-container) .swal2-file{width:75%;margin-right:auto;margin-left:auto;background:rgba(0,0,0,0);font-size:1.125em}div:where(.swal2-container) .swal2-textarea{height:6.75em;padding:.75em}div:where(.swal2-container) .swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:rgba(0,0,0,0);color:inherit;font-size:1.125em}div:where(.swal2-container) .swal2-radio,div:where(.swal2-container) .swal2-checkbox{align-items:center;justify-content:center;background:#fff;color:inherit}div:where(.swal2-container) .swal2-radio label,div:where(.swal2-container) .swal2-checkbox label{margin:0 .6em;font-size:1.125em}div:where(.swal2-container) .swal2-radio input,div:where(.swal2-container) .swal2-checkbox input{flex-shrink:0;margin:0 .4em}div:where(.swal2-container) label:where(.swal2-input-label){display:flex;justify-content:center;margin:1em auto 0}div:where(.swal2-container) div:where(.swal2-validation-message){align-items:center;justify-content:center;margin:1em 0 0;padding:.625em;overflow:hidden;background:hsl(0,0%,94%);color:#666;font-size:1em;font-weight:300}div:where(.swal2-container) div:where(.swal2-validation-message)::before{content:"!";display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center}div:where(.swal2-container) .swal2-progress-steps{flex-wrap:wrap;align-items:center;max-width:100%;margin:1.25em auto;padding:0;background:rgba(0,0,0,0);font-weight:600}div:where(.swal2-container) .swal2-progress-steps li{display:inline-block;position:relative}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step{z-index:20;flex-shrink:0;width:2em;height:2em;border-radius:2em;background:#2778c4;color:#fff;line-height:2em;text-align:center}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:#2778c4}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step{background:#add8e6;color:#fff}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line{background:#add8e6}div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step-line{z-index:10;flex-shrink:0;width:2.5em;height:.4em;margin:0 -1px;background:#2778c4}div:where(.swal2-icon){position:relative;box-sizing:content-box;justify-content:center;width:5em;height:5em;margin:2.5em auto .6em;border:.25em solid rgba(0,0,0,0);border-radius:50%;border-color:#000;font-family:inherit;line-height:5em;cursor:default;user-select:none}div:where(.swal2-icon) .swal2-icon-content{display:flex;align-items:center;font-size:3.75em}div:where(.swal2-icon).swal2-error{border-color:#f27474;color:#f27474}div:where(.swal2-icon).swal2-error .swal2-x-mark{position:relative;flex-grow:1}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;transform:rotate(45deg)}div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-error.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-error.swal2-icon-show .swal2-x-mark{animation:swal2-animate-error-x-mark .5s}div:where(.swal2-icon).swal2-warning{border-color:rgb(249.95234375,205.965625,167.74765625);color:#f8bb86}div:where(.swal2-icon).swal2-warning.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-warning.swal2-icon-show .swal2-icon-content{animation:swal2-animate-i-mark .5s}div:where(.swal2-icon).swal2-info{border-color:rgb(156.7033492823,224.2822966507,246.2966507177);color:#3fc3ee}div:where(.swal2-icon).swal2-info.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-info.swal2-icon-show .swal2-icon-content{animation:swal2-animate-i-mark .8s}div:where(.swal2-icon).swal2-question{border-color:rgb(200.8064516129,217.9677419355,225.1935483871);color:#87adbd}div:where(.swal2-icon).swal2-question.swal2-icon-show{animation:swal2-animate-error-icon .5s}div:where(.swal2-icon).swal2-question.swal2-icon-show .swal2-icon-content{animation:swal2-animate-question-mark .8s}div:where(.swal2-icon).swal2-success{border-color:#a5dc86;color:#a5dc86}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;border-radius:50%}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=left]{top:-0.4375em;left:-2.0635em;transform:rotate(-45deg);transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=right]{top:-0.6875em;left:1.875em;transform:rotate(-45deg);transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}div:where(.swal2-icon).swal2-success .swal2-success-ring{position:absolute;z-index:2;top:-0.25em;left:-0.25em;box-sizing:content-box;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%}div:where(.swal2-icon).swal2-success .swal2-success-fix{position:absolute;z-index:1;top:.5em;left:1.625em;width:.4375em;height:5.625em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-success [class^=swal2-success-line]{display:block;position:absolute;z-index:2;height:.3125em;border-radius:.125em;background-color:#a5dc86}div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.8125em;width:1.5625em;transform:rotate(45deg)}div:where(.swal2-icon).swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;transform:rotate(-45deg)}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-tip{animation:swal2-animate-success-line-tip .75s}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-long{animation:swal2-animate-success-line-long .75s}div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-circular-line-right{animation:swal2-rotate-success-circular-line 4.25s ease-in}[class^=swal2]{-webkit-tap-highlight-color:rgba(0,0,0,0)}.swal2-show{animation:swal2-show .3s}.swal2-hide{animation:swal2-hide .15s forwards}.swal2-noanimation{transition:none}.swal2-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}.swal2-rtl .swal2-close{margin-right:initial;margin-left:0}.swal2-rtl .swal2-timer-progress-bar{right:0;left:auto}.swal2-toast{box-sizing:border-box;grid-column:1/4 !important;grid-row:1/4 !important;grid-template-columns:min-content auto min-content;padding:1em;overflow-y:hidden;background:#fff;box-shadow:0 0 1px rgba(0,0,0,.075),0 1px 2px rgba(0,0,0,.075),1px 2px 4px rgba(0,0,0,.075),1px 3px 8px rgba(0,0,0,.075),2px 4px 16px rgba(0,0,0,.075);pointer-events:all}.swal2-toast>*{grid-column:2}.swal2-toast h2:where(.swal2-title){margin:.5em 1em;padding:0;font-size:1em;text-align:initial}.swal2-toast .swal2-loading{justify-content:center}.swal2-toast input:where(.swal2-input){height:2em;margin:.5em;font-size:1em}.swal2-toast .swal2-validation-message{font-size:1em}.swal2-toast div:where(.swal2-footer){margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-toast button:where(.swal2-close){grid-column:3/3;grid-row:1/99;align-self:center;width:.8em;height:.8em;margin:0;font-size:2em}.swal2-toast div:where(.swal2-html-container){margin:.5em 1em;padding:0;overflow:initial;font-size:1em;text-align:initial}.swal2-toast div:where(.swal2-html-container):empty{padding:0}.swal2-toast .swal2-loader{grid-column:1;grid-row:1/99;align-self:center;width:2em;height:2em;margin:.25em}.swal2-toast .swal2-icon{grid-column:1;grid-row:1/99;align-self:center;width:2em;min-width:2em;height:2em;margin:0 .5em 0 0}.swal2-toast .swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:1.8em;font-weight:bold}.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-toast div:where(.swal2-actions){justify-content:flex-start;height:auto;margin:0;margin-top:.5em;padding:0 .5em}.swal2-toast button:where(.swal2-styled){margin:.25em .5em;padding:.4em .6em;font-size:1em}.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:1.6em;height:3em;border-radius:50%}.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-0.8em;left:-0.5em;transform:rotate(-45deg);transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-0.25em;left:.9375em;transform-origin:0 1.5em;border-radius:0 4em 4em 0}.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip{animation:swal2-toast-animate-success-line-tip .75s}.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long{animation:swal2-toast-animate-success-line-long .75s}.swal2-toast.swal2-show{animation:swal2-toast-show .5s}.swal2-toast.swal2-hide{animation:swal2-toast-hide .1s forwards}@keyframes swal2-show{0%{transform:scale(0.7)}45%{transform:scale(1.05)}80%{transform:scale(0.95)}100%{transform:scale(1)}}@keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(0.5);opacity:0}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-0.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(0.4);opacity:0}50%{margin-top:1.625em;transform:scale(0.4);opacity:0}80%{margin-top:-0.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0deg);opacity:1}}@keyframes swal2-rotate-loading{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes swal2-animate-question-mark{0%{transform:rotateY(-360deg)}100%{transform:rotateY(0)}}@keyframes swal2-animate-i-mark{0%{transform:rotateZ(45deg);opacity:0}25%{transform:rotateZ(-25deg);opacity:.4}50%{transform:rotateZ(15deg);opacity:.8}75%{transform:rotateZ(-5deg);opacity:1}100%{transform:rotateX(0);opacity:1}}@keyframes swal2-toast-show{0%{transform:translateY(-0.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(0.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0deg)}}@keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-0.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}</style></head>
+<body cz-shortcut-listen="true">
 <div class="container">
   <div class="header">
     <span class="emoji-big">🎓</span>
@@ -167,172 +358,377 @@
 
   <div class="card">
     <div class="input-group">
-      <input type="text" id="sbdInput" placeholder="Nhập số báo danh..." maxlength="12"
-             onkeydown="if(event.key==='Enter') search()">
+      <input type="text" id="sbdInput" placeholder="Nhập số báo danh..." maxlength="12" onkeydown="if(event.key===&#39;Enter&#39;) search()">
       <button class="btn-search" id="btnSearch" onclick="search()">🔍 Tra cứu</button>
     </div>
   </div>
 
+  <!-- CARD THỦ KHOA -->
   <div id="thuKhoaCard">
     <div class="thu-khoa-header">
       <span style="font-size:22px">🏆</span>
       <span class="tk-title">Thủ Khoa 2026</span>
-      <span class="tk-sub" id="tkSub">Top 3 toàn tỉnh</span>
+      <span class="tk-sub">Top 3 toàn tỉnh</span>
     </div>
-    <div class="tk-list" id="tkList"></div>
+    <div class="tk-list" id="tkList">
+    <div class="tk-item rank1 pop" style="animation-delay:0s">
+      <div class="tk-medal">🥇</div>
+      <div class="tk-info">
+        <div class="tk-sbd">SBD: 10300888 &nbsp;•&nbsp; HĐ: 103</div>
+        <div class="tk-name">Thủ khoa</div>
+        <div class="tk-details">
+          <span class="tk-tag">📖 Văn: 9.25</span>
+          <span class="tk-tag">🌐 NN: 10</span>
+          <span class="tk-tag">📐 Toán: 10</span>
+        </div>
+      </div>
+      <div class="tk-score-box">
+        <div class="tk-score">29.25</div>
+        <div class="tk-score-label">tổng điểm</div>
+      </div>
+    </div>
+  
+    <div class="tk-item rank2 pop" style="animation-delay:0.12s">
+      <div class="tk-medal">🥈</div>
+      <div class="tk-info">
+        <div class="tk-sbd">SBD: 10301651 &nbsp;•&nbsp; HĐ: 103</div>
+        <div class="tk-name">Á khoa</div>
+        <div class="tk-details">
+          <span class="tk-tag">📖 Văn: 9.25</span>
+          <span class="tk-tag">🌐 NN: 10</span>
+          <span class="tk-tag">📐 Toán: 10</span>
+        </div>
+      </div>
+      <div class="tk-score-box">
+        <div class="tk-score">29.25</div>
+        <div class="tk-score-label">tổng điểm</div>
+      </div>
+    </div>
+  
+    <div class="tk-item rank3 pop" style="animation-delay:0.24s">
+      <div class="tk-medal">🥉</div>
+      <div class="tk-info">
+        <div class="tk-sbd">SBD: 12500357 &nbsp;•&nbsp; HĐ: 125</div>
+        <div class="tk-name">Hạng Ba</div>
+        <div class="tk-details">
+          <span class="tk-tag">📖 Văn: 9.5</span>
+          <span class="tk-tag">🌐 NN: 10</span>
+          <span class="tk-tag">📐 Toán: 9.75</span>
+        </div>
+      </div>
+      <div class="tk-score-box">
+        <div class="tk-score">29.25</div>
+        <div class="tk-score-label">tổng điểm</div>
+      </div>
+    </div>
+  </div>
   </div>
 
   <div class="card" id="result">
     <div id="resultContent"></div>
   </div>
 
-  <div class="footer">Dữ liệu từ Sở GD&ĐT Nghệ An • AI dự đoán mang tính tham khảo</div>
+  <div class="footer">Dữ liệu từ Sở GD&amp;ĐT Nghệ An • AI dự đoán mang tính tham khảo</div>
 </div>
 
 <script>
-const API_URL = "https://af96-34-16-152-251.ngrok-free.app/";  // ← URL từ Ngrok
+const API_URL = "https://llm.thesparkdaily.com/v1/chat/completions";
+const API_KEY = "sk-XI0oMcxPtA-180oOH1N4OA";
+const MODEL   = "deepseek-v4-flash";
 
-async function loadThuKhoa() {{
-  try {{
-    const res = await fetch(`${{API_URL}}/api/thu-khoa`);
-    const data = await res.json();
-    const medals = ["🥇", "🥈", "🥉"];
-    const classes = ["rank1", "rank2", "rank3"];
-    const labels = ["Thủ khoa", "Á khoa", "Hạng Ba"];
+let diemThiData   = null;
+let diemChuanData = null;
 
-    document.getElementById("tkSub").textContent = `Top 3 / ${{data.total_students.toLocaleString()}} thí sinh`;
+async function loadData() {
+  try {
+    const [r1, r2] = await Promise.all([
+      fetch("diem-tuyen-sinh-10-2026.json"),
+      fetch("diem-chuan-cac-truong-thpt-qua-tung-nam.json")
+    ]);
+    const j1 = await r1.json();
+    const j2 = await r2.json();
 
-    const html = data.thu_khoa.map((ts, i) => `
-      <div class="tk-item ${{classes[i]}} pop" style="animation-delay:${{i * 0.12}}s">
-        <div class="tk-medal">${{medals[i]}}</div>
-        <div class="tk-info">
-          <div class="tk-sbd">SBD: ${{ts.sbd}} &nbsp;•&nbsp; HĐ: ${{ts.ma_hd}}</div>
-          <div class="tk-name">${{labels[i]}}</div>
-          <div class="tk-details">
-            <span class="tk-tag">📖 Văn: ${{ts.diem_van ?? "Vắng"}}</span>
-            <span class="tk-tag">🌐 NN: ${{ts.diem_nn ?? "Vắng"}}</span>
-            <span class="tk-tag">📐 Toán: ${{ts.diem_toan ?? "Vắng"}}</span>
-          </div>
-        </div>
-        <div class="tk-score-box">
-          <div class="tk-score">${{ts.tong_diem}}</div>
-          <div class="tk-score-label">tổng điểm</div>
-        </div>
-      </div>
-    `).join("");
+    const arr = j1.du_lieu_thi ?? j1;
+    diemThiData = {};
+    arr.forEach(item => {
+      diemThiData[String(item.sbd)] = item;
+    });
 
-    document.getElementById("tkList").innerHTML = html;
-  }} catch(e) {{
-    console.error("Lỗi load thủ khoa:", e);
+    diemChuanData = j2.diem_chuan_thpt_nghe_an?.du_lieu ?? j2.du_lieu ?? j2;
+    console.log("✅ Loaded", Object.keys(diemThiData).length, "thí sinh,", diemChuanData.length, "trường");
+
+    renderThuKhoa();
+  } catch(e) {
+    console.error("❌ Lỗi load data:", e);
     document.getElementById("tkList").innerHTML =
-      `<div style="text-align:center;color:#ef4444;padding:16px">❌ Không tải được dữ liệu</div>`;
-  }}
-}}
+      `<div style="text-align:center;color:#ef4444;padding:16px;font-size:14px">❌ Không tải được dữ liệu</div>`;
+  }
+}
+loadData();
 
-loadThuKhoa();
+function renderThuKhoa() {
+  if (!diemThiData) return;
 
-function hideThuKhoa() {{
-  document.getElementById("thuKhoaCard").classList.add("hidden");
-}}
+  const medals  = ["🥇", "🥈", "🥉"];
+  const classes  = ["rank1", "rank2", "rank3"];
+  const labels   = ["Thủ khoa", "Á khoa", "Hạng Ba"];
 
-function scoreBox(cls, mon, diem) {{
-  if (diem === null || diem === undefined) {{
-    return `<div class="score-box vang"><div class="mon">${{mon}}</div><div class="diem">😴</div><div class="label">Vắng thi</div></div>`;
-  }}
-  return `<div class="score-box ${{cls}} pop"><div class="mon">${{mon}}</div><div class="diem">${{diem}}</div><div class="label">điểm</div></div>`;
-}}
+  const sorted = Object.values(diemThiData)
+    .map(ts => ({
+      sbd:  String(ts.sbd),
+      ma_hd: ts.ma_hd ?? "—",
+      van:  ts.diem_van,
+      nn:   ts.diem_nn,
+      toan: ts.diem_toan,
+      tong: Math.round(((ts.diem_van ?? 0) + (ts.diem_nn ?? 0) + (ts.diem_toan ?? 0)) * 100) / 100
+    }))
+    .sort((a, b) => b.tong - a.tong)
+    .slice(0, 3);
 
-function schoolList(arr, cls, badge) {{
-  return arr.slice(0, 4).map(s => `
-    <div class="school-item ${{cls}}">
-      <div>
-        <div class="school-name">${{s.ten_truong}}</div>
-        <div class="school-meta">Dự đoán: ${{s.diem_chuan}} điểm (${{s.nguon}}) • Xác suất: ${{s.xac_suat}}%</div>
+  const html = sorted.map((ts, i) => `
+    <div class="tk-item ${classes[i]} pop" style="animation-delay:${i * 0.12}s">
+      <div class="tk-medal">${medals[i]}</div>
+      <div class="tk-info">
+        <div class="tk-sbd">SBD: ${ts.sbd} &nbsp;•&nbsp; HĐ: ${ts.ma_hd}</div>
+        <div class="tk-name">${labels[i]}</div>
+        <div class="tk-details">
+          <span class="tk-tag">📖 Văn: ${ts.van ?? "Vắng"}</span>
+          <span class="tk-tag">🌐 NN: ${ts.nn ?? "Vắng"}</span>
+          <span class="tk-tag">📐 Toán: ${ts.toan ?? "Vắng"}</span>
+        </div>
       </div>
-      <span class="school-badge">${{badge}}</span>
-    </div>`).join("");
-}}
+      <div class="tk-score-box">
+        <div class="tk-score">${ts.tong}</div>
+        <div class="tk-score-label">tổng điểm</div>
+      </div>
+    </div>
+  `).join("");
 
-async function search() {{
+  document.getElementById("tkList").innerHTML = html;
+}
+
+function hideThuKhoa() {
+  document.getElementById("thuKhoaCard").classList.add("hidden");
+}
+
+function duDoanDC(truong) {
+  const dc2026 = truong["2026"]?.diem_chuan;
+  if (dc2026 && dc2026 !== "chưa có") return { diem: dc2026, nguon: "2026" };
+
+  const dc2025 = truong["2025"]?.diem_chuan;
+  const dc2024 = truong["2024"]?.diem_chuan;
+  const dc2023 = truong["2023"]?.diem_chuan;
+
+  const valid = v => v && v !== "chưa có";
+
+  if (valid(dc2025) && valid(dc2024)) {
+    const trend = dc2025 - dc2024;
+    const du = Math.round((dc2025 + trend * 0.5) * 100) / 100;
+    return { diem: du, nguon: "dự đoán từ 2024-2025" };
+  }
+  if (valid(dc2025)) return { diem: dc2025, nguon: "2025" };
+  if (valid(dc2024)) return { diem: dc2024, nguon: "2024" };
+  if (valid(dc2023)) return { diem: dc2023, nguon: "2023" };
+  return null;
+}
+
+function tinhRank(tongDiem) {
+  if (!diemThiData) return { rank: "?", total: "?" };
+  const all = Object.values(diemThiData).map(d => {
+    return (d.diem_van ?? 0) + (d.diem_nn ?? 0) + (d.diem_toan ?? 0);
+  }).sort((a, b) => b - a);
+  const rank = all.findIndex(d => d <= tongDiem) + 1;
+  return { rank, total: all.length };
+}
+
+async function goiAI(thongTin) {
+  const { sbd, diem_van, diem_nn, diem_toan, tong, rank, total, truongDau, truongSat, truongKho, soVang } = thongTin;
+
+  const prompt = `Bạn là AI cà khịa nhưng vẫn động viên học sinh vừa tra điểm thi tuyển sinh lớp 10 Nghệ An 2026.
+
+Thông tin thí sinh SBD ${sbd}:
+- Điểm Văn: ${diem_van ?? "Vắng"}
+- Điểm Ngoại Ngữ: ${diem_nn ?? "Vắng"}  
+- Điểm Toán: ${diem_toan ?? "Vắng"}
+- Tổng điểm (môn có mặt): ${tong}
+- Xếp hạng trong dữ liệu: Top ${rank}/${total} thí sinh
+- Số môn vắng: ${soVang}
+- Trường có thể đậu: ${truongDau.map(t=>t.ten).join(", ") || "không rõ"}
+- Trường sát sao: ${truongSat.map(t=>t.ten).join(", ") || "không có"}
+- Trường khó đậu: ${truongKho.map(t=>t.ten).join(", ") || "không có"}
+
+H�y viết 3-4 câu: cà khịa hài hước GenZ nhưng có động viên, nhận xét điểm từng môn, và chúc mừng hoặc an ủi về kết quả. Dùng tiếng Việt tự nhiên, có thể dùng emoji. KHÔNG dùng markdown.`;
+
+  const res = await fetch(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${API_KEY}`
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      messages: [{ role: "user", content: prompt }],
+      max_tokens: 400,
+      stream: true
+    })
+  });
+
+  return res;
+}
+
+async function search() {
   const sbd = document.getElementById("sbdInput").value.trim();
   if (!sbd) return;
+
+  if (!diemThiData) {
+    alert("Đang tải dữ liệu, vui lòng thử lại!");
+    return;
+  }
 
   const btn = document.getElementById("btnSearch");
   btn.disabled = true;
   btn.textContent = "⏳ Đang tìm...";
+
   hideThuKhoa();
 
-  const resultDiv = document.getElementById("result");
+  const resultDiv  = document.getElementById("result");
   const contentDiv = document.getElementById("resultContent");
   resultDiv.style.display = "block";
 
-  try {{
-    const res = await fetch(`${{API_URL}}/api/tra-cuu?sbd=${{sbd}}`);
-    const data = await res.json();
+  const ts = diemThiData[sbd];
+  if (!ts) {
+    contentDiv.innerHTML = `<div class="not-found">😅 Không tìm thấy SBD <strong>${sbd}</strong><br><small>Kiểm tra lại số báo danh nhé!</small></div>`;
+    btn.disabled = false;
+    btn.textContent = "🔍 Tra cứu";
+    return;
+  }
 
-    if (data.error) {{
-      contentDiv.innerHTML = `<div class="not-found">😅 ${{data.error}}<br><small>Kiểm tra lại số báo danh nhé!</small></div>`;
-      btn.disabled = false;
-      btn.textContent = "🔍 Tra cứu";
-      return;
-    }}
+  const van  = ts.diem_van;
+  const nn   = ts.diem_nn;
+  const toan = ts.diem_toan;
+  const soVang = [van, nn, toan].filter(d => d === null || d === undefined).length;
+  const tong = (van ?? 0) + (nn ?? 0) + (toan ?? 0);
+  const tongHienThi = Math.round(tong * 100) / 100;
 
-    const {{ ma_hd, diem_toan, diem_van, diem_nn, tong_diem, so_vang, rank, total_students,
-            truong_dau, truong_sat, truong_kho }} = data;
+  const { rank, total } = tinhRank(tong);
 
-    const rankIcon = rank <= 10 ? "🏆" : rank <= 50 ? "🥈" : rank <= 200 ? "🥉" : "📊";
-    const pct = Math.round((1 - rank / total_students) * 100);
+  const truongDau = [], truongSat = [], truongKho = [];
+  diemChuanData.forEach(t => {
+    const dd = duDoanDC(t);
+    if (!dd) return;
+    const diff = tong - dd.diem;
+    const obj = { ten: t.ten_truong, dc: dd.diem, nguon: dd.nguon, diff };
+    if (diff >= 1)        truongDau.push(obj);
+    else if (diff >= -1)  truongSat.push(obj);
+    else                  truongKho.push(obj);
+  });
+  truongDau.sort((a,b) => b.dc - a.dc);
+  truongSat.sort((a,b) => Math.abs(a.diff) - Math.abs(b.diff));
+  truongKho.sort((a,b) => b.dc - a.dc);
 
-    contentDiv.innerHTML = `
-      <div class="student-header">
-        <div class="avatar">🎒</div>
-        <div class="student-info">
-          <h2>SBD: ${{sbd}}</h2>
-          <span>Mã hội đồng: ${{ma_hd}} • Kết quả thi 2026</span>
-        </div>
-      </div>
+  function scoreBox(cls, mon, diem) {
+    if (diem === null || diem === undefined) {
+      return `<div class="score-box vang"><div class="mon">${mon}</div><div class="diem">😴</div><div class="label">Vắng thi</div></div>`;
+    }
+    return `<div class="score-box ${cls} pop"><div class="mon">${mon}</div><div class="diem">${diem}</div><div class="label">điểm</div></div>`;
+  }
 
-      <div class="scores-grid">
-        ${{scoreBox("van", "Ngữ Văn", diem_van)}}
-        ${{scoreBox("nn", "Ngoại Ngữ", diem_nn)}}
-        ${{scoreBox("toan", "Toán", diem_toan)}}
-      </div>
-
-      <div class="total-box pop">
-        <div class="total-label">TỔNG ĐIỂM${{so_vang > 0 ? ` (${{3 - so_vang}} môn)` : ""}}</div>
-        <div class="total-score">${{tong_diem}}</div>
-        ${{so_vang > 0 ? `<div class="total-note">⚠️ Vắng ${{so_vang}} môn — tổng chỉ tính môn có mặt</div>` : ""}}
-      </div>
-
-      ${{rank ? `
-      <div class="rank-box pop">
-        <div class="rank-icon">${{rankIcon}}</div>
+  function schoolList(arr, cls, badge) {
+    return arr.slice(0, 4).map(s => `
+      <div class="school-item ${cls}">
         <div>
-          <div class="rank-text">Top ${{rank}} / ${{total_students.toLocaleString()}} thí sinh toàn tỉnh</div>
-          <div class="rank-sub">Cao hơn ${{pct}}% thí sinh trong dữ liệu 📈</div>
+          <div class="school-name">${s.ten}</div>
+          <div class="school-meta">Dự đoán: ${s.dc} điểm (${s.nguon})</div>
         </div>
-      </div>` : ""}}
+        <span class="school-badge">${badge}</span>
+      </div>`).join("");
+  }
 
-      ${{truong_dau.length > 0 ? `
-      <div class="schools-title">🟢 Có thể đậu</div>
-      ${{schoolList(truong_dau, "dau", "✅ Khả năng cao")}}` : ""}}
+  const rankIcon = rank <= 10 ? "🏆" : rank <= 50 ? "🥈" : rank <= 200 ? "🥉" : "📊";
+  const pct = Math.round((1 - rank/total)*100);
 
-      ${{truong_sat.length > 0 ? `
-      <div class="schools-title">🟡 Sát sao (±1 điểm)</div>
-      ${{schoolList(truong_sat, "sat", "⚡ Cần theo dõi")}}` : ""}}
+  contentDiv.innerHTML = `
+    <div class="student-header">
+      <div class="avatar">🎒</div>
+      <div class="student-info">
+        <h2>SBD: ${sbd}</h2>
+        <span>Mã hội đồng: ${ts.ma_hd} • Kết quả thi 2026</span>
+      </div>
+    </div>
 
-      ${{truong_kho.length > 0 ? `
-      <div class="schools-title">🔴 Khó đậu hơn</div>
-      ${{schoolList(truong_kho.slice(0, 3), "kho", "❌ Cần cân nhắc")}}` : ""}}
-    `;
-  }} catch(e) {{
-    contentDiv.innerHTML = `<div class="not-found">❌ Lỗi kết nối API: ${{e.message}}</div>`;
-  }}
+    <div class="scores-grid">
+      ${scoreBox("van",  "Ngữ Văn",    van)}
+      ${scoreBox("nn",   "Ngoại Ngữ",  nn)}
+      ${scoreBox("toan", "Toán",       toan)}
+    </div>
+
+    <div class="total-box pop">
+      <div class="total-label">TỔNG ĐIỂM${soVang > 0 ? ` (${3-soVang} môn)` : ""}</div>
+      <div class="total-score">${tongHienThi}</div>
+      ${soVang > 0 ? `<div class="total-note">⚠️ Vắng ${soVang} môn — tổng chỉ tính môn có mặt</div>` : ""}
+    </div>
+
+    <div class="rank-box pop">
+      <div class="rank-icon">${rankIcon}</div>
+      <div>
+        <div class="rank-text">Top ${rank} / ${total} thí sinh toàn tỉnh</div>
+        <div class="rank-sub">Cao hơn ${pct}% thí sinh trong dữ liệu 📈</div>
+      </div>
+    </div>
+
+    <div class="ai-box">
+      <div class="ai-label">🤖 AI NÓI GÌ NÀO...</div>
+      <div class="ai-text" id="aiText">
+        <div class="ai-typing"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+
+    ${truongDau.length > 0 ? `
+    <div class="schools-title">🟢 Có thể đậu</div>
+    ${schoolList(truongDau, "dau", "✅ Khả năng cao")}` : ""}
+
+    ${truongSat.length > 0 ? `
+    <div class="schools-title">🟡 Sát sao (±1 điểm)</div>
+    ${schoolList(truongSat, "sat", "⚡ Cần theo dõi")}` : ""}
+
+    ${truongKho.length > 0 ? `
+    <div class="schools-title">🔴 Khó đậu hơn</div>
+    ${schoolList(truongKho.slice(0,3), "kho", "❌ Cần cân nhắc")}` : ""}
+  `;
+
+  try {
+    const res = await goiAI({ sbd, diem_van: van, diem_nn: nn, diem_toan: toan, tong: tongHienThi, rank, total, truongDau, truongSat, truongKho, soVang });
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    const aiTextEl = document.getElementById("aiText");
+    aiTextEl.innerHTML = "";
+    let buffer = "";
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split("\n");
+      buffer = lines.pop();
+
+      for (const line of lines) {
+        if (!line.startsWith("data: ")) continue;
+        const data = line.slice(6).trim();
+        if (data === "[DONE]") break;
+        try {
+          const json = JSON.parse(data);
+          const chunk = json.choices?.[0]?.delta?.content ?? "";
+          aiTextEl.innerHTML += chunk.replace(/\n/g, "<br>");
+        } catch {}
+      }
+    }
+  } catch(e) {
+    document.getElementById("aiText").innerHTML = "😅 AI đang bận cà khịa người khác, thử lại sau nhé!";
+  }
 
   btn.disabled = false;
   btn.textContent = "🔍 Tra cứu";
-  resultDiv.scrollIntoView({{ behavior: "smooth", block: "start" }});
-}}
+  resultDiv.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 </script>
-</body>
-</html>
+        </body></html></template></yd-sidebar></body></html>
