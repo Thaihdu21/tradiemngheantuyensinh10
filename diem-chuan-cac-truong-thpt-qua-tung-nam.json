@@ -37,7 +37,7 @@
           "diem_binh_quan": "chưa có"
         },
         "2026": {
-          "diem_chuan": "chưa có",
+          "diem_chuan": 25.25,
           "diem_binh_quan": "chưa có"
         }
       },
@@ -137,7 +137,7 @@
           "diem_binh_quan": "chưa có"
         },
         "2026": {
-          "diem_chuan": "chưa có",
+          "diem_chuan": 13.75,
           "diem_binh_quan": "chưa có"
         }
       },
@@ -277,7 +277,7 @@
           "diem_binh_quan": "chưa có"
         },
         "2026": {
-          "diem_chuan": "chưa có",
+          "diem_chuan": 17.5,
           "diem_binh_quan": "chưa có"
         }
       },
@@ -617,7 +617,7 @@
           "diem_binh_quan": "chưa có"
         },
         "2026": {
-          "diem_chuan": "chưa có",
+          "diem_chuan": 17.25,
           "diem_binh_quan": "chưa có"
         }
       },
@@ -637,7 +637,7 @@
           "diem_binh_quan": "chưa có"
         },
         "2026": {
-          "diem_chuan": "chưa có",
+          "diem_chuan": 17.25,
           "diem_binh_quan": "chưa có"
         }
       },
@@ -697,7 +697,7 @@
           "diem_binh_quan": "chưa có"
         },
         "2026": {
-          "diem_chuan": "chưa có",
+          "diem_chuan": 17.75,
           "diem_binh_quan": "chưa có"
         }
       },
@@ -838,6 +838,86 @@
         },
         "2026": {
           "diem_chuan": "chưa có",
+          "diem_binh_quan": "chưa có"
+        }
+      },
+      {
+        "stt": 43,
+        "ten_truong": "THPT Đô Lương 4",
+        "2023": {
+          "diem_chuan": "chưa có",
+          "diem_binh_quan": "chưa có"
+        },
+        "2024": {
+          "diem_chuan": "chưa có",
+          "diem_binh_quan": "chưa có"
+        },
+        "2025": {
+          "diem_chuan": "chưa có",
+          "diem_binh_quan": "chưa có"
+        },
+        "2026": {
+          "diem_chuan": 17.75,
+          "diem_binh_quan": "chưa có"
+        }
+      },
+      {
+        "stt": 44,
+        "ten_truong": "THPT Cửa Lò 2",
+        "2023": {
+          "diem_chuan": "chưa có",
+          "diem_binh_quan": "chưa có"
+        },
+        "2024": {
+          "diem_chuan": "chưa có",
+          "diem_binh_quan": "chưa có"
+        },
+        "2025": {
+          "diem_chuan": "chưa có",
+          "diem_binh_quan": "chưa có"
+        },
+        "2026": {
+          "diem_chuan": 17,
+          "diem_binh_quan": "chưa có"
+        }
+      },
+      {
+        "stt": 45,
+        "ten_truong": "THPT Đô Lương 3",
+        "2023": {
+          "diem_chuan": "chưa có",
+          "diem_binh_quan": "chưa có"
+        },
+        "2024": {
+          "diem_chuan": "chưa có",
+          "diem_binh_quan": "chưa có"
+        },
+        "2025": {
+          "diem_chuan": "chưa có",
+          "diem_binh_quan": "chưa có"
+        },
+        "2026": {
+          "diem_chuan": 19.25,
+          "diem_binh_quan": "chưa có"
+        }
+      },
+      {
+        "stt": 46,
+        "ten_truong": "THPT Cát Ngạn",
+        "2023": {
+          "diem_chuan": "chưa có",
+          "diem_binh_quan": "chưa có"
+        },
+        "2024": {
+          "diem_chuan": "chưa có",
+          "diem_binh_quan": "chưa có"
+        },
+        "2025": {
+          "diem_chuan": "chưa có",
+          "diem_binh_quan": "chưa có"
+        },
+        "2026": {
+          "diem_chuan": 10,
           "diem_binh_quan": "chưa có"
         }
       }
