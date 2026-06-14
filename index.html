@@ -100,10 +100,10 @@
   .tk-item.rank3 { background: linear-gradient(135deg, #fbe9e7, #ffccbc); border: 2px solid #ffab91; }
 
   .tk-medal { font-size: 28px; flex-shrink: 0; }
-  .tk-info { flex: 1; }
+  .tk-info { flex: 1; min-width: 0; }
   .tk-info .tk-sbd { font-size: 13px; color: #888; font-weight: 600; }
   .tk-info .tk-name { font-size: 15px; font-weight: 800; color: #222; margin-top: 1px; }
-  .tk-score-box { text-align: right; }
+  .tk-score-box { text-align: right; flex-shrink: 0; }
   .tk-score-box .tk-score { font-size: 28px; font-weight: 800; line-height: 1; }
   .tk-item.rank1 .tk-score { color: #f59e0b; }
   .tk-item.rank2 .tk-score { color: #6b7280; }
@@ -198,6 +198,149 @@
   .not-found { text-align: center; padding: 20px; color: #ef4444; font-weight: 600; font-size: 15px; }
   .footer { text-align: center; color: rgba(255,255,255,0.6); font-size: 12px; margin-top: 10px; }
 
+  /* ===== MOBILE CSS ===== */
+  @media (max-width: 480px) {
+    body {
+      padding: 20px 12px;
+    }
+
+    .header { margin-bottom: 20px; }
+    .header .emoji-big { font-size: 48px; }
+    .header h1 { font-size: 20px; }
+    .header p { font-size: 13px; }
+
+    .card {
+      padding: 18px 16px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    /* Input + button xếp dọc trên mobile */
+    .input-group {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .input-group input {
+      min-width: unset;
+      width: 100%;
+      font-size: 16px; /* tránh iOS zoom */
+      padding: 14px 16px;
+      letter-spacing: 1.5px;
+    }
+    .btn-search {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 14px;
+    }
+
+    /* Thủ khoa card */
+    #thuKhoaCard {
+      padding: 18px 16px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .thu-khoa-header .tk-title { font-size: 15px; }
+    .thu-khoa-header .tk-sub { font-size: 11px; }
+
+    .tk-item {
+      padding: 12px 12px;
+      gap: 10px;
+    }
+    .tk-medal { font-size: 24px; }
+    .tk-info .tk-sbd { font-size: 11px; }
+    .tk-info .tk-name { font-size: 13px; }
+    .tk-score-box .tk-score { font-size: 22px; }
+    .tk-tag { font-size: 10px; padding: 2px 6px; }
+
+    /* Kết quả card */
+    .student-header {
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+    }
+    .avatar { width: 50px; height: 50px; font-size: 24px; }
+    .student-info h2 { font-size: 17px; }
+    .student-info span { font-size: 11px; }
+
+    /* Điểm 3 môn - giữ 3 cột nhưng nhỏ hơn */
+    .scores-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .score-box {
+      padding: 12px 6px;
+      border-radius: 12px;
+    }
+    .score-box .mon {
+      font-size: 10px;
+      letter-spacing: 0;
+      margin-bottom: 4px;
+    }
+    .score-box .diem { font-size: 26px; }
+    .score-box.vang .diem { font-size: 16px; }
+    .score-box .label { font-size: 10px; }
+
+    /* Tổng điểm */
+    .total-box {
+      padding: 16px;
+      border-radius: 14px;
+      margin-bottom: 14px;
+    }
+    .total-box .total-label { font-size: 12px; }
+    .total-box .total-score { font-size: 44px; }
+    .total-box .total-note { font-size: 11px; }
+
+    /* Xếp hạng */
+    .rank-box {
+      padding: 14px 14px;
+      gap: 10px;
+      border-radius: 14px;
+      margin-bottom: 14px;
+    }
+    .rank-box .rank-icon { font-size: 30px; }
+    .rank-box .rank-text { font-size: 13px; }
+    .rank-box .rank-sub { font-size: 12px; }
+
+    /* AI box */
+    .ai-box {
+      padding: 16px;
+      border-radius: 14px;
+      margin-bottom: 14px;
+    }
+    .ai-box .ai-text { font-size: 14px; line-height: 1.7; }
+
+    /* Danh sách trường */
+    .schools-title { font-size: 14px; margin-bottom: 10px; }
+    .school-item {
+      padding: 12px 12px;
+      border-radius: 10px;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .school-name { font-size: 13px; }
+    .school-meta { font-size: 11px; }
+    .school-badge {
+      font-size: 10px;
+      padding: 3px 8px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .not-found { font-size: 14px; padding: 16px; }
+    .footer { font-size: 11px; }
+  }
+
+  /* Cho màn hình rất nhỏ (320px) */
+  @media (max-width: 360px) {
+    .header h1 { font-size: 18px; }
+    .score-box .diem { font-size: 22px; }
+    .score-box .mon { font-size: 9px; }
+    .tk-item { gap: 8px; }
+    .tk-score-box .tk-score { font-size: 20px; }
+  }
+
   @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes typing { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-8px); } }
@@ -229,7 +372,6 @@
       <span class="tk-sub">Top 3 toàn tỉnh</span>
     </div>
     <div class="tk-list" id="tkList">
-      <!-- render bằng JS -->
       <div style="text-align:center;color:#aaa;padding:16px;font-size:14px">⏳ Đang tải dữ liệu...</div>
     </div>
   </div>
@@ -276,7 +418,6 @@ async function loadData() {
 }
 loadData();
 
-// ===== RENDER THỦ KHOA =====
 function renderThuKhoa() {
   if (!diemThiData) return;
 
@@ -284,7 +425,6 @@ function renderThuKhoa() {
   const classes  = ["rank1", "rank2", "rank3"];
   const labels   = ["Thủ khoa", "Á khoa", "Hạng Ba"];
 
-  // Tính tổng điểm từng thí sinh, sắp xếp giảm dần
   const sorted = Object.values(diemThiData)
     .map(ts => ({
       sbd:  String(ts.sbd),
@@ -319,12 +459,10 @@ function renderThuKhoa() {
   document.getElementById("tkList").innerHTML = html;
 }
 
-// ===== ẨN CARD THỦ KHOA KHI TRA CỨU =====
 function hideThuKhoa() {
   document.getElementById("thuKhoaCard").classList.add("hidden");
 }
 
-// Tính điểm chuẩn dự đoán 2026
 function duDoanDC(truong) {
   const dc2026 = truong["2026"]?.diem_chuan;
   if (dc2026 && dc2026 !== "chưa có") return { diem: dc2026, nguon: "2026" };
@@ -371,7 +509,7 @@ Thông tin thí sinh SBD ${sbd}:
 - Trường sát sao: ${truongSat.map(t=>t.ten).join(", ") || "không có"}
 - Trường khó đậu: ${truongKho.map(t=>t.ten).join(", ") || "không có"}
 
-Hãy viết 3-4 câu: cà khịa hài hước GenZ nhưng có động viên, nhận xét điểm từng môn, và chúc mừng hoặc an ủi về kết quả. Dùng tiếng Việt tự nhiên, có thể dùng emoji. KHÔNG dùng markdown.`;
+H�y viết 3-4 câu: cà khịa hài hước GenZ nhưng có động viên, nhận xét điểm từng môn, và chúc mừng hoặc an ủi về kết quả. Dùng tiếng Việt tự nhiên, có thể dùng emoji. KHÔNG dùng markdown.`;
 
   const res = await fetch(API_URL, {
     method: "POST",
@@ -403,7 +541,6 @@ async function search() {
   btn.disabled = true;
   btn.textContent = "⏳ Đang tìm...";
 
-  // Ẩn card thủ khoa
   hideThuKhoa();
 
   const resultDiv  = document.getElementById("result");
